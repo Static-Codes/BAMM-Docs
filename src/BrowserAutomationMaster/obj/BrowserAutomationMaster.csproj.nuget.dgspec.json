@@ -80,7 +80,15 @@
           "warn": true,
           "downloadDependencies": [
             {
+              "name": "Microsoft.AspNetCore.App.Runtime.linux-arm64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
               "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.osx-arm64",
               "version": "[8.0.15, 8.0.15]"
             },
             {
@@ -96,7 +104,7 @@
               "version": "[8.0.15, 8.0.15]"
             },
             {
-              "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+              "name": "Microsoft.NETCore.App.Host.linux-arm64",
               "version": "[8.0.15, 8.0.15]"
             },
             {
@@ -104,11 +112,23 @@
               "version": "[8.0.15, 8.0.15]"
             },
             {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
               "name": "Microsoft.NETCore.App.Host.osx-x64",
               "version": "[8.0.15, 8.0.15]"
             },
             {
+              "name": "Microsoft.NETCore.App.Runtime.linux-arm64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
               "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.osx-arm64",
               "version": "[8.0.15, 8.0.15]"
             },
             {
@@ -124,19 +144,11 @@
               "version": "[8.0.15, 8.0.15]"
             },
             {
-              "name": "Microsoft.NETCore.App.Runtime.win-x86",
-              "version": "[8.0.15, 8.0.15]"
-            },
-            {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-arm64",
               "version": "[8.0.15, 8.0.15]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[8.0.15, 8.0.15]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
               "version": "[8.0.15, 8.0.15]"
             }
           ],
@@ -149,7 +161,13 @@
         }
       },
       "runtimes": {
+        "linux-arm64": {
+          "#import": []
+        },
         "linux-x64": {
+          "#import": []
+        },
+        "osx-arm64": {
           "#import": []
         },
         "osx-x64": {
@@ -159,9 +177,6 @@
           "#import": []
         },
         "win-x64": {
-          "#import": []
-        },
-        "win-x86": {
           "#import": []
         }
       }

@@ -1,2 +1,0 @@
-C:\Users\Nerdy\Documents\GitHub\BrowserAutomationMaster\BrowserAutomationMaster\src\publish_osx\bamm.pdb
-C:\Users\Nerdy\Documents\GitHub\BrowserAutomationMaster\BrowserAutomationMaster\src\publish_osx\bamm
