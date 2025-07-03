@@ -1,2 +1,0 @@
-C:\Users\Nerdy\Documents\GitHub\BrowserAutomationMaster\BrowserAutomationMaster\src\BrowserAutomationMaster\bin\Release\net8.0\linux-arm64\publish\bamm.pdb
-C:\Users\Nerdy\Documents\GitHub\BrowserAutomationMaster\BrowserAutomationMaster\src\BrowserAutomationMaster\bin\Release\net8.0\linux-arm64\publish\bamm
