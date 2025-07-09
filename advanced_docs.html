@@ -51,14 +51,19 @@
       .arg-list li {
         margin-bottom: 5px;
       }
+      #selector-tutorial {
+        margin-bottom: 15px;
+      }
+      #selector-tutorial strong {
+        color: #0056b3;
+      }
     </style>
   </head>
   <body>
-    <h1>BAMC DSL Documentation - Advanced Argument Types</h1>
+    <h1>BAMC - Advanced Documentation</h1>
     <p>
       This document provides a detailed breakdown of the argument types for each
-      action and feature in the BAMC DSL, intended for advanced users who need
-      precise control and understanding of the script syntax.
+      action and feature in the BAMC Language.
     </p>
 
     <h2>Actions</h2>
@@ -494,5 +499,138 @@
         </tr>
       </tbody>
     </table>
+
+    <h2 id="selectors">Selectors</h2>
+    <p>
+      For a tutorial on how to find selectors, please click
+      <a href="#selector-tutorial">here</a>
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Selector Type</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ID Selector</td>
+          <td class="description">
+            Selects an element by its unique <code>id</code> attribute.
+          </td>
+          <td>
+            <code>"myElementId"</code> (for
+            <code>&lt;div id="myElementId"&gt;</code>)
+          </td>
+        </tr>
+        <tr>
+          <td>NAME Selector</td>
+          <td class="description">
+            Selects an element by its <code>name</code> attribute, commonly used
+            for form elements.
+          </td>
+          <td>
+            <code>"username"</code> (for
+            <code>&lt;input name="username"&gt;</code>)
+          </td>
+        </tr>
+        <tr>
+          <td>TAG NAME Selector</td>
+          <td class="description">
+            Selects all elements with a specific HTML tag name.
+          </td>
+          <td>
+            <code>"button"</code> (for all <code>&lt;button&gt;</code> elements)
+          </td>
+        </tr>
+        <tr>
+          <td>XPATH Selector</td>
+          <td class="description">
+            Selects elements using an XML Path Language (XPath) expression,
+            allowing for complex selections.
+          </td>
+          <td><code>"//div[@class='container']/p[2]"</code></td>
+        </tr>
+        <tr>
+          <td>CSS Selector</td>
+          <td class="description">
+            Selects elements using Cascading Style Sheets (CSS) selectors,
+            offering a flexible way to target elements based on their
+            attributes, classes, IDs, and relationships.
+          </td>
+          <td><code>"div.product-item > h3.title"</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="selectorgadget-tutorial">Using SelectorGadget</h2>
+    <section id="selector-tutorial">
+      <p>
+        SelectorGadget is a browser extension that makes it easy to find the
+        correct CSS selector for any element on a web page. This is incredibly
+        useful when you need to interact with specific elements using commands
+        like <code>click-exp</code> or <code>fill-text-exp</code>.
+      </p>
+      <h3>Installation</h3>
+      <ol>
+        <li>
+          <strong>Install the Extension:</strong> Search for "SelectorGadget" in
+          your browser's extension store (e.g., Chrome Web Store, Firefox
+          Add-ons). Install it.
+        </li>
+        <li>
+          <strong>Pin to Toolbar (Optional but Recommended):</strong> Once
+          installed, you might want to pin it to your browser's toolbar for
+          quick access.
+        </li>
+      </ol>
+      <h3>How to Use</h3>
+      <p>Follow these steps to find a CSS selector using SelectorGadget:</p>
+      <ol>
+        <li>
+          <strong>Activate SelectorGadget:</strong> Navigate to the web page you
+          want to inspect. Click on the SelectorGadget icon in your browser's
+          toolbar. A yellow bar will appear at the bottom of the screen.
+        </li>
+        <li>
+          <strong>Select Desired Elements (Green):</strong> Click on the element
+          you want to select. SelectorGadget will highlight it in
+          <strong>green</strong> and attempt to find a CSS selector that matches
+          it. It will also highlight other elements that match the same
+          selector.
+        </li>
+        <li>
+          <strong>Deselect Unwanted Elements (Red):</strong> If SelectorGadget
+          highlights elements you *don't* want to select (they will also be
+          green), click on them. They will turn <strong>red</strong>, and
+          SelectorGadget will refine the CSS selector to exclude them.
+        </li>
+        <li>
+          <strong>Select More Elements (Green):</strong> If there are other
+          elements you *do* want to select that are not currently highlighted,
+          click on them. They will turn <strong>green</strong>, and
+          SelectorGadget will adjust the CSS selector to include them.
+        </li>
+        <li>
+          <strong>Copy the Selector:</strong> The yellow bar at the bottom will
+          display the generated CSS selector. Once you are satisfied that only
+          the desired elements are highlighted in green, copy the selector from
+          this bar.
+        </li>
+        <li>
+          <strong>Test the Selector:</strong> (Optional but recommended) You can
+          paste the copied selector into your browser's developer console (F12,
+          then go to the Console tab) and use
+          <code>document.querySelectorAll('your-selector-here')</code> to see
+          which elements it selects.
+        </li>
+      </ol>
+      <p>
+        This CSS selector can now be used in your BAMC script with commands that
+        support CSS selectors, such as <code>click-exp</code> or
+        <code>fill-text-exp</code>.
+      </p>
+    </section>
   </body>
 </html>
