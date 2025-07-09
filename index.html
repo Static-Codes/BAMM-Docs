@@ -1,320 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAMC DSL Documentation - Advanced Argument Types</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAMC DSL Documentation</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            margin: 20px;
-            background-color: #f4f4f4;
-        }
-        h1, h2 {
-            color: #0056b3;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-            vertical-align: top;
-        }
-        th {
-            background-color: #e0f2f7;
-            font-weight: bold;
-        }
-        code {
-            background-color: #eee;
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-family: 'Courier New', Courier, monospace;
-            color: #c7254e;
-        }
-        .description {
-            font-style: italic;
-            color: #555;
-        }
-        .arg-list li {
-            margin-bottom: 5px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 800px;
+        width: 90%;
+      }
+      h1 {
+        color: #0056b3;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.1em;
+        color: #555;
+        margin-bottom: 30px;
+      }
+      .doc-options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+      }
+      .doc-card {
+        background-color: #e0f2f7;
+        border: 1px solid #cce7ee;
+        border-radius: 6px;
+        padding: 30px 20px;
+        flex: 1 1 300px; /* Allows cards to grow/shrink but not too small */
+        max-width: 380px;
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: #0056b3;
+        font-weight: bold;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .doc-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        background-color: #d1eff6;
+      }
+      .doc-card h3 {
+        margin-top: 0;
+        color: #004085;
+        font-size: 1.5em;
+      }
+      .doc-card p.description {
+        font-size: 0.95em;
+        color: #3a5c77;
+        font-style: normal;
+        margin-bottom: 20px;
+      }
+      .doc-card .button {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1em;
+        transition: background-color 0.2s ease;
+      }
+      .doc-card .button:hover {
+        background-color: #0056b3;
+      }
     </style>
-</head>
-<body>
-    <h1>BAMC DSL Documentation - Advanced Argument Types</h1>
-    <p>This document provides a detailed breakdown of the argument types for each action and feature in the BAMC DSL, intended for advanced users who need precise control and understanding of the script syntax.</p>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to BAMC DSL Documentation</h1>
+      <p>
+        Choose the documentation path that best suits your experience level.
+      </p>
 
-    <h2>Actions</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Command</th>
-                <th>Syntax Example</th>
-                <th>Description</th>
-                <th>Argument Types</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>add-header</code></td>
-                <td><code>add-header "DNT" "1"</code></td>
-                <td class="description">Adds an HTTP Header for the current request.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Header Name):</strong> <code>string</code> (e.g., "DNT")</li>
-                        <li><strong>Argument 2 (Header Value):</strong> <code>string</code> (e.g., "1")</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>add-headers</code></td>
-                <td><code>add-headers {"header-name1": "header-value1", ...}</code></td>
-                <td class="description">Adds multiple HTTP Headers for the current request via a JSON Object.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Headers):</strong> <code>JSON Object</code> (Key-value pairs where keys are header names (<code>string</code>) and values are header values (<code>string</code>))</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>browser</code></td>
-                <td><code>browser "chrome"</code></td>
-                <td class="description">Specifies the browser type. This MUST be the first valid line of the file. If not supplied, defaults to a Firefox instance or user agent.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Browser Type):</strong> <code>string</code> ("chrome" or "firefox")</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>click</code></td>
-                <td><code>click "selector"</code></td>
-                <td class="description">Clicks the specified button element. Supports ID, NAME, TAG NAME, and XPATH selectors.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Selector):</strong> <code>string</code> (A valid ID, NAME, TAG NAME, or XPATH selector for the element to click)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>click-exp</code></td>
-                <td><code>click-exp 'css-selector.item_element'</code></td>
-                <td class="description">Alternative to <code>click</code>; use this if <code>click</code> is causing issues. Supports CSS SELECTOR.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (CSS Selector):</strong> <code>string</code> (A valid CSS selector for the element to click)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>end-javascript</code></td>
-                <td><code>end-javascript</code></td>
-                <td class="description">Instructs the parser that the end of a JavaScript code block was reached. An error will be thrown if <code>end-javascript</code> is not found within the file (when a <code>start-javascript</code> is present).</td>
-                <td>No arguments.</td>
-            </tr>
-            <tr>
-                <td><code>fill-text</code></td>
-                <td><code>fill-text "selector" "Value you want to include"</code></td>
-                <td class="description">Assigns the specified value to the selected element.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Selector):</strong> <code>string</code> (A valid selector for the input element)</li>
-                        <li><strong>Argument 2 (Value):</strong> <code>string</code> (The text value to assign to the element)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>fill-text-exp</code></td>
-                <td><code>fill-text-exp "selector" "Value you want to include"</code></td>
-                <td class="description">More advanced version of <code>fill-text</code>.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Selector):</strong> <code>string</code> (A valid selector for the input element)</li>
-                        <li><strong>Argument 2 (Value):</strong> <code>string</code> (The text value to assign to the element)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>get-text</code></td>
-                <td><code>get-text "selector"</code></td>
-                <td class="description">Gets the text for a specified element. Supports ID, NAME, TAG NAME, and XPATH selectors.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Selector):</strong> <code>string</code> (A valid ID, NAME, TAG NAME, or XPATH selector for the element)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>save-as-html</code></td>
-                <td><code>save-as-html "filename.html"</code></td>
-                <td class="description">Saves the current page's HTML to a file with the specified name.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (File Name):</strong> <code>string</code> (The path and name of the HTML file to save, e.g., "output.html")</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>save-as-html-exp</code></td>
-                <td><code>save-as-html-exp "filename.html"</code></td>
-                <td class="description">Saves the current page's HTML to a file with the specified name but uses different logic; use this if <code>save-as-html</code> doesn't fit your needs.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (File Name):</strong> <code>string</code> (The path and name of the HTML file to save)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>select-option</code></td>
-                <td><code>select-option "selector" 2</code></td>
-                <td class="description">Selects an <code>&lt;option&gt;</code> from a <code>&lt;select&gt;</code> dropdown menu. Currently only supports <code>&lt;select&gt;&lt;option&gt;&lt;/option&gt;&lt;/select&gt;</code>.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Selector):</strong> <code>string</code> (A valid selector for the <code>&lt;select&gt;</code> element)</li>
-                        <li><strong>Argument 2 (Option Number):</strong> <code>integer</code> (The 0-based or 1-based index of the option to select, depending on implementation details; 2 typically means the 3rd item if 0-based, or 2nd if 1-based. Clarification needed for specific implementation.)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>select-element</code></td>
-                <td><code>select-element "selector"</code></td>
-                <td class="description">Selects the element associated with the provided selector (if found). This currently works but, there's no logic to access the selected element; this should only be done if you're manually editing the compiled Python script.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Selector):</strong> <code>string</code> (A valid selector for the element)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>set-custom-useragent</code></td>
-                <td><code>set-custom-useragent "Mozilla/5.0 (...)"</code></td>
-                <td class="description">Sets a custom user agent for the current script.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (User Agent String):</strong> <code>string</code> (The full user agent string to set)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>start-javascript</code></td>
-                <td><code>start-javascript</code></td>
-                <td class="description">Instructs the parser to read all following lines as a .js code block, until <code>end-javascript</code> is found; Will throw an error if <code>end-javascript</code> is not found within the file.</td>
-                <td>No arguments.</td>
-            </tr>
-            <tr>
-                <td><code>take-screenshot</code></td>
-                <td><code>take-screenshot "filename.png"</code></td>
-                <td class="description">Takes a screenshot of the browser after executing the previous line. It's recommended to add a "wait-for-seconds" command before executing this.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (File Name):</strong> <code>string</code> (The path and name of the PNG file to save, e.g., "screenshot.png")</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>visit</code></td>
-                <td><code>visit "https://url-to-visit.com/page.html"</code></td>
-                <td class="description">Visits a specified URL.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (URL):</strong> <code>string</code> (A valid URL string, including protocol like "https://")</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>wait-for-seconds</code></td>
-                <td><code>wait-for-seconds 1</code></td>
-                <td class="description">Waits for the specified number of seconds before continuing. Supports decimals.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Seconds):</strong> <code>number</code> (The duration to wait, can be an integer or a floating-point number, e.g., 1 or 0.2)</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+      <div class="doc-options">
+        <a href="beginner_docs.html" class="doc-card">
+          <h3>Beginner-Friendly Guide</h3>
+          <p class="description">
+            Ideal for those new to coding or with minimal experience. Focuses on
+            core concepts and practical examples to get you started quickly.
+          </p>
+          <span class="button">Start Here</span>
+        </a>
 
-    <h2>Features</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Command</th>
-                <th>Syntax Example</th>
-                <th>Description</th>
-                <th>Argument Types</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>async</code></td>
-                <td><code>feature "async"</code></td>
-                <td class="description">This indicates to the compiler you want to create an asynchronous script. This should not be done unless you have experience using async functions in Python. Currently not supported, will throw an error if you use.</td>
-                <td>No arguments for the feature declaration itself.</td>
-            </tr>
-            <tr>
-                <td><code>bypass-cloudflare</code></td>
-                <td><code>feature "bypass-cloudflare"</code></td>
-                <td class="description">Instructs the browser to use a more advanced approach to bypass Cloudflare. Currently not supported, will throw an error if you use.</td>
-                <td>No arguments for the feature declaration itself.</td>
-            </tr>
-            <tr>
-                <td><code>disable-pycache</code></td>
-                <td><code>feature "disable-pycache"</code></td>
-                <td class="description">Instructs the compiler to disable the writing of the <code>__pycache__</code> directory. This directory is written by Visual Studio Code and contains <code>.pyc</code> files.</td>
-                <td>No arguments for the feature declaration itself.</td>
-            </tr>
-            <tr>
-                <td><code>use-http-proxy</code></td>
-                <td><code>feature "use-http-proxy" "USER:PASS@IP:PORT"</code></td>
-                <td class="description">Uses the entered HTTP proxy for the session. Use "NULL:NULL@IP:PORT" if no user:pass authentication is required.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Proxy String):</strong> <code>string</code> (Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for no authentication.)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>use-https-proxy</code></td>
-                <td><code>feature "use-https-proxy" "USER:PASS@IP:PORT"</code></td>
-                <td class="description">Uses the entered HTTPS proxy for the session. Use "NULL:NULL@IP:PORT" if no user:pass authentication is required.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Proxy String):</strong> <code>string</code> (Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for no authentication.)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>use-socks4-proxy</code></td>
-                <td><code>feature "use-socks4-proxy" "USER:PASS@IP:PORT"</code></td>
-                <td class="description">Uses the entered SOCKS4 proxy for the session. Use <code>feature "use-socks4-proxy" "NULL:NULL@IP:PORT"</code> if no user:pass authentication is required.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Proxy String):</strong> <code>string</code> (Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for no authentication.)</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><code>use-socks5-proxy</code></td>
-                <td><code>feature "use-socks5-proxy" "USER:PASS@IP:PORT"</code></td>
-                <td class="description">Uses the entered SOCKS5 proxy for the session. Use <code>feature "use-socks5-proxy" "NULL:NULL@IP:PORT"</code> if no user:pass authentication is required.</td>
-                <td>
-                    <ul class="arg-list">
-                        <li><strong>Argument 1 (Proxy String):</strong> <code>string</code> (Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for no authentication.)</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</body>
+        <a href="advanced_docs.html" class="doc-card">
+          <h3>Advanced User Reference</h3>
+          <p class="description">
+            For experienced developers seeking detailed syntax, argument types,
+            and in-depth technical specifications of the BAMC DSL.
+          </p>
+          <span class="button">Dive Deeper</span>
+        </a>
+      </div>
+    </div>
+  </body>
 </html>
