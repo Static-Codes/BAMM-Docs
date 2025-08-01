@@ -9,8 +9,15 @@
         font-family: Arial, sans-serif;
         line-height: 1.6;
         color: #333;
-        margin: 20px;
+        margin: 10px;
         background-color: #f4f4f4;
+        padding: 10px;
+      }
+      @media (min-width: 768px) {
+        body {
+          margin: 20px;
+          padding: 0;
+        }
       }
       h1,
       h2 {
@@ -26,29 +33,70 @@
         margin-bottom: 20px;
         background-color: #fff;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+      }
+      @media (min-width: 768px) {
+        table {
+          font-size: 16px;
+          display: table;
+          white-space: normal;
+        }
       }
       th,
       td {
         border: 1px solid #ddd;
-        padding: 10px;
+        padding: 6px;
         text-align: left;
         vertical-align: top;
+        min-width: 120px;
+      }
+      @media (min-width: 768px) {
+        th,
+        td {
+          padding: 10px;
+          min-width: auto;
+        }
       }
       th:nth-child(1),
       td:nth-child(1) {
         width: 22%;
+        min-width: 100px;
       }
       th:nth-child(2),
       td:nth-child(2) {
         width: 28%;
+        min-width: 150px;
       }
       th:nth-child(3),
       td:nth-child(3) {
         width: 25%;
+        min-width: 120px;
       }
       th:nth-child(4),
       td:nth-child(4) {
         width: 25%;
+        min-width: 140px;
+      }
+      @media (max-width: 767px) {
+        th:nth-child(1),
+        td:nth-child(1) {
+          width: auto;
+        }
+        th:nth-child(2),
+        td:nth-child(2) {
+          width: auto;
+        }
+        th:nth-child(3),
+        td:nth-child(3) {
+          width: auto;
+        }
+        th:nth-child(4),
+        td:nth-child(4) {
+          width: auto;
+        }
       }
       th {
         background-color: #e0f2f7;
@@ -71,13 +119,16 @@
       #selector-tutorial {
         margin-bottom: 15px;
       }
+      h3 {
+        text-align: center;
+      }
       #selector-tutorial strong {
         color: #0056b3;
       }
     </style>
   </head>
   <body>
-    <h1 style="text-align: center;">BAMC - Advanced Documentation</h1>
+    <h1>BAMC - Advanced Documentation</h1>
     <p style="text-align: center;">
       This document provides a detailed breakdown of the argument types for each
       action and feature in the BAMC Language.
