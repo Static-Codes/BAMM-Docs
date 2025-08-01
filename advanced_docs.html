@@ -33,6 +33,22 @@
         text-align: left;
         vertical-align: top;
       }
+      th:nth-child(1),
+      td:nth-child(1) {
+        width: 22%;
+      }
+      th:nth-child(2),
+      td:nth-child(2) {
+        width: 28%;
+      }
+      th:nth-child(3),
+      td:nth-child(3) {
+        width: 25%;
+      }
+      th:nth-child(4),
+      td:nth-child(4) {
+        width: 25%;
+      }
       th {
         background-color: #e0f2f7;
         font-weight: bold;
@@ -86,12 +102,12 @@
           <td>
             <ul class="arg-list">
               <li>
-                <strong>Argument 1 (Header Name):</strong>
-                <code>string</code> (e.g., "DNT")
+                <strong>Argument 1 (Header Name):</strong> <code>string</code><br>
+                (e.g., "DNT")
               </li>
               <li>
-                <strong>Argument 2 (Header Value):</strong>
-                <code>string</code> (e.g., "1")
+                <strong>Argument 2 (Header Value):</strong> <code>string</code><br>
+                (e.g., "1")
               </li>
             </ul>
           </td>
@@ -108,10 +124,8 @@
           <td>
             <ul class="arg-list">
               <li>
-                <strong>Argument 1 (Headers):</strong>
-                <code>JSON Object</code> (Key-value pairs where keys are header
-                names (<code>string</code>) and values are header values
-                (<code>string</code>))
+                <strong>Argument 1 (Headers):</strong> <code>JSON Object</code><br>
+                (Key-value pairs where keys are header names (<code>string</code>) and values are header values (<code>string</code>))
               </li>
             </ul>
           </td>
@@ -126,8 +140,8 @@
           <td>
             <ul class="arg-list">
               <li>
-                <strong>Argument 1 (Browser Type):</strong>
-                <code>string</code> ("chrome" or "firefox")
+                <strong>Argument 1 (Browser Type):</strong> <code>string</code><br>
+                ("chrome" or "firefox")
               </li>
             </ul>
           </td>
@@ -142,9 +156,27 @@
           <td>
             <ul class="arg-list">
               <li>
-                <strong>Argument 1 (Selector):</strong> <code>string</code> (A
-                valid ID, NAME, TAG NAME, or XPATH selector for the element to
-                click)
+                <strong>Argument 1 (Selector):</strong> <code>string</code><br>
+                (A valid ID, NAME, TAG NAME, or XPATH selector for the element to click)
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><code>click-at-position</code></td>
+          <td><code>click-at-position "600" "600"</code></td>
+          <td class="description">
+            Clicks at a specific point on screen.
+          </td>
+          <td>
+            <ul class="arg-list">
+              <li>
+                <strong>Argument 1 (X Coordinate):</strong> <code>string</code><br>
+                (The X coordinate position on screen, e.g., "600")
+              </li>
+              <li>
+                <strong>Argument 2 (Y Coordinate):</strong> <code>string</code><br>
+                (The Y coordinate position on screen, e.g., "600")
               </li>
             </ul>
           </td>
@@ -159,12 +191,19 @@
           <td>
             <ul class="arg-list">
               <li>
-                <strong>Argument 1 (CSS Selector):</strong>
-                <code>string</code> (A valid CSS selector for the element to
-                click)
+                <strong>Argument 1 (CSS Selector):</strong> <code>string</code><br>
+                (A valid CSS selector for the element to click)
               </li>
             </ul>
           </td>
+        </tr>
+        <tr>
+          <td><code>close-current-tab</code></td>
+          <td><code>close-current-tab</code></td>
+          <td class="description">
+            Closes the current tab and will close the browser if there's only one open tab.
+          </td>
+          <td>No arguments.</td>
         </tr>
         <tr>
           <td><code>end-javascript</code></td>
@@ -186,12 +225,12 @@
           <td>
             <ul class="arg-list">
               <li>
-                <strong>Argument 1 (Selector):</strong> <code>string</code> (A
-                valid selector for the input element)
+                <strong>Argument 1 (Selector):</strong> <code>string</code><br>
+                (A valid selector for the input element)
               </li>
               <li>
-                <strong>Argument 2 (Value):</strong> <code>string</code> (The
-                text value to assign to the element)
+                <strong>Argument 2 (Value):</strong> <code>string</code><br>
+                (The text value to assign to the element)
               </li>
             </ul>
           </td>
@@ -207,12 +246,12 @@
           <td>
             <ul class="arg-list">
               <li>
-                <strong>Argument 1 (Selector):</strong> <code>string</code> (A
-                valid selector for the input element)
+                <strong>Argument 1 (Selector):</strong> <code>string</code><br>
+                (A valid selector for the input element)
               </li>
               <li>
-                <strong>Argument 2 (Value):</strong> <code>string</code> (The
-                text value to assign to the element)
+                <strong>Argument 2 (Value):</strong> <code>string</code><br>
+                (The text value to assign to the element)
               </li>
             </ul>
           </td>
@@ -227,8 +266,27 @@
           <td>
             <ul class="arg-list">
               <li>
-                <strong>Argument 1 (Selector):</strong> <code>string</code> (A
-                valid ID, NAME, TAG NAME, or XPATH selector for the element)
+                <strong>Argument 1 (Selector):</strong> <code>string</code><br>
+                (A valid ID, NAME, TAG NAME, or XPATH selector for the element)
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><code>open-new-tab</code></td>
+          <td><code>open-new-tab "https://google.com" "3"</code></td>
+          <td class="description">
+            A new browser tab is opened, the system will then pause for the number of seconds specified, then visits the requested url.
+          </td>
+          <td>
+            <ul class="arg-list">
+              <li>
+                <strong>Argument 1 (URL):</strong> <code>string</code><br>
+                (The URL to visit in the new tab, e.g., "https://google.com")
+              </li>
+              <li>
+                <strong>Argument 2 (Wait Time):</strong> <code>string</code><br>
+                (The number of seconds to wait before visiting the URL, e.g., "3")
               </li>
             </ul>
           </td>
@@ -376,9 +434,8 @@
           <td>
             <ul class="arg-list">
               <li>
-                <strong>Argument 1 (Seconds):</strong> <code>number</code> (The
-                duration to wait, can be an integer or a floating-point number,
-                e.g., 1 or 0.2)
+                <strong>Argument 1 (Seconds):</strong> <code>number</code><br>
+                (The duration to wait, can be an integer or a floating-point number, e.g., 1 or 0.2)
               </li>
             </ul>
           </td>
@@ -398,32 +455,20 @@
       </thead>
       <tbody>
         <tr>
-          <td><code>async</code></td>
-          <td><code>feature "async"</code></td>
-          <td class="description">
-            This indicates to the compiler you want to create an asynchronous
-            script. This should not be done unless you have experience using
-            async functions in Python. Currently not supported, will throw an
-            error if you use.
-          </td>
-          <td>No arguments for the feature declaration itself.</td>
-        </tr>
-        <tr>
-          <td><code>bypass-cloudflare</code></td>
-          <td><code>feature "bypass-cloudflare"</code></td>
-          <td class="description">
-            Instructs the browser to use a more advanced approach to bypass
-            Cloudflare. Currently not supported, will throw an error if you use.
-          </td>
-          <td>No arguments for the feature declaration itself.</td>
-        </tr>
-        <tr>
           <td><code>disable-pycache</code></td>
           <td><code>feature "disable-pycache"</code></td>
           <td class="description">
             Instructs the compiler to disable the writing of the
             <code>__pycache__</code> directory. This directory is written by
             Visual Studio Code and contains <code>.pyc</code> files.
+          </td>
+          <td>No arguments for the feature declaration itself.</td>
+        </tr>
+        <tr>
+          <td><code>disable-ssl</code></td>
+          <td><code>feature "disable-ssl"</code></td>
+          <td class="description">
+            Disables SSL certificate authentication for the given session.
           </td>
           <td>No arguments for the feature declaration itself.</td>
         </tr>
