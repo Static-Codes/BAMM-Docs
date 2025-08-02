@@ -816,7 +816,7 @@
               </div>
             </div>
             <div class="command-description">
-              Sets a custom user agent for the current script.
+              Sets a custom user agent at the current point in the script, unlike <code>bamm --set-custom-useragent</code>, which sets this value at startup.
             </div>
             <div class="command-args">
               <div class="args-title">Arguments:</div>
@@ -1223,7 +1223,7 @@
                 <td><code>set-custom-useragent</code></td>
                 <td><code>set-custom-useragent "Mozilla/5.0 (...)"</code></td>
                 <td class="description">
-                  Sets a custom user agent for the current script.
+                  Sets a custom user agent at the current point in the script, unlike <code>bamm --set-custom-useragent</code>, which sets this value at startup.
                 </td>
                 <td>
                   <ul class="arg-list">
@@ -1291,6 +1291,238 @@
                       <strong>Argument 1 (Seconds):</strong> <code>number</code
                       ><br />(The duration to wait, can be an integer or a
                       floating-point number, e.g., 1 or 0.2)
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>CLI Arguments</h2>
+
+        <!-- Mobile Layout -->
+        <div class="mobile-layout">
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">add</div>
+              <div class="command-syntax"><code>bamm add 'path/to/filename.bamc'</code></div>
+            </div>
+            <div class="command-description">
+              Adds a <code>.bamc</code> file to the </code>userScripts</code> directory.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Filename)</strong> <code>string</code
+                  ><br />(e.g., "path/to/filename.bamc")
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">compile</div>
+              <div class="command-syntax">
+                <code>bamm compile 'path/to/filename.bamc'</code>
+              </div>
+            </div>
+            <div class="command-description">
+              Compiles a <code>.bamc</code> file that isn't located in the <code>userScripts</code> directory
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Filename)</strong> <code>string</code
+                  ><br />(e.g., "path/to/filename.bamc")
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">delete</div>
+              <div class="command-syntax"><code>bamm delete 'filename.bamc'</code></div>
+            </div>
+            <div class="command-description">
+              Deletes a <code>.bamc</code> file to the <code>userScripts</code> directory.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Filename)</strong> <code>string</code
+                  ><br />(e.g., "path/to/filename.bamc")
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">help</div>
+              <div class="command-syntax">bamm help "feature-name"</div>
+            </div>
+            <div class="command-description">
+              Displays information about the specified command.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Feature name):</strong> <code>string</code
+                  ><br />(The specified feature you want to learn more about.)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">--set-custom-useragent</div>
+              <div class="command-syntax">bamm --set-custom-useragent=="Mozilla/5.0 (...)"</div>
+            </div>
+            <div class="command-description">
+              Sets the user agent that the browser uses on start up.   
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (User Agent String):</strong>
+                  <code>string</code><br />(The full user agent string to set)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">--set-timeout</div>
+              <div class="command-syntax">
+                bamm --set-timeout==5
+              </div>
+            </div>
+            <div class="command-description">
+              Overrides the timeout for all actions, by default this is 10.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Timeout):</strong> <code>integer</code
+                  ><br />(A valid integer greater than 0)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop Layout -->
+        <div class="desktop-layout">
+          <table>
+            <thead>
+              <tr>
+                <th>Command</th>
+                <th>Syntax Example</th>
+                <th>Description</th>
+                <th>Argument Types</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>add</code></td>
+                <td><code>bamm add 'path/to/filename.bamc'</code></td>
+                <td class="description">
+                  Adds a <code>.bamc</code> file to the </code>userScripts</code> directory.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Filename)</strong> <code>string</code
+                      ><br />(e.g., "path/to/filename.bamc")
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><code>compile</code></td>
+                <td>
+                  <code>bamm compile 'path/to/filename.bamc'</code>
+                </td>
+                <td class="description">
+                  Compiles a <code>.bamc</code> file that isn't located in the <code>userScripts</code> directory
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Filename)</strong> <code>string</code
+                      ><br />(e.g., "path/to/filename.bamc")
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><code>delete</code></td>
+                <td><code>bamm delete 'filename.bamc'</code></td>
+                <td class="description">
+                  Deletes a <code>.bamc</code> file to the <code>userScripts</code> directory.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Filename)</strong> <code>string</code
+                      ><br />(e.g., "filename.bamc")
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><code>help</code></td>
+                <td><code>bamm help "feature-name"</code></td>
+                <td class="description">
+                  Displays information about the specified command.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Feature name):</strong> <code>string</code
+                      ><br />(The specified feature you want to learn more about.)
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><code>--set-custom-useragent</code></td>
+                <td><code>bamm --set-custom-useragent=="Mozilla/5.0 (...)"</code></td>
+                <td class="description">
+                  Sets the user agent that the browser uses on start up.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (User Agent String):</strong>
+                      <code>string</code><br />(The full user agent string to set)
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><code>--set-timeout</code></td>
+                <td><code>bamm --set-timeout==5</code></td>
+                <td class="description">
+                  Alternative to <code>click</code>; use this if
+                  <code>click</code> is causing issues. Supports CSS SELECTOR.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Timeout):</strong> <code>integer</code
+                      ><br />(A valid integer greater than 0)
                     </li>
                   </ul>
                 </td>
@@ -1903,6 +2135,7 @@ save-as-html "page-content.html"</pre
           <code>visit</code>, <code>wait-for-seconds</code>, and
           <code>take-screenshot</code> to get familiar with the syntax.
         </div>
+      
       </div>
       <section id="config-tutorial">
         <div class="tutorial-container">
