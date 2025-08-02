@@ -1,279 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BAMC - Beginner Guide</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        margin: 20px;
-        background-color: #f4f4f4;
-      }
-      .container {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        max-width: 900px;
-        margin: 30px auto;
-      }
-      h1,
-      h2,
-      h3 {
-        color: #0056b3;
-        border-bottom: 2px solid #0056b3;
-        padding-bottom: 5px;
-        margin-top: 30px;
-      }
-      .back-link {
-        display: inline-block;
-        margin-bottom: 20px;
-        color: #007bff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      .back-link:hover {
-        text-decoration: underline;
-      }
-      code {
-        background-color: #eee;
-        padding: 2px 4px;
-        border-radius: 3px;
-        font-family: "Courier New", Courier, monospace;
-        color: #c7254e;
-      }
-      pre {
-        background-color: #f8f8f8;
-        border: 1px solid #ddd;
-        padding: 15px;
-        border-radius: 5px;
-        overflow-x: auto;
-      }
-      .example-section {
-        margin-bottom: 40px;
-        border-left: 4px solid #a7d9ee;
-        padding-left: 15px;
-        background-color: #f9fcfe;
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-      .step {
-        margin-bottom: 15px;
-      }
-      .step strong {
-        color: #004085;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #24292f;
+            background-color: #ffffff;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1012px;
+            margin: 0 auto;
+            padding: 32px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: #0969da;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .back-link::before {
+            content: '←';
+            margin-right: 8px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #24292f;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #d1d9e0;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #24292f;
+            margin: 32px 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #d1d9e0;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #24292f;
+            margin: 24px 0 12px 0;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #656d76;
+        }
+
+        ul {
+            margin: 16px 0;
+            padding-left: 32px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #656d76;
+        }
+
+        .example-section {
+            background-color: #f6f8fa;
+            border: 1px solid #d1d9e0;
+            border-radius: 6px;
+            padding: 24px;
+            margin: 24px 0;
+            border-left: 4px solid #0969da;
+        }
+
+        pre {
+            background-color: #f6f8fa;
+            border: 1px solid #d1d9e0;
+            border-radius: 6px;
+            padding: 16px;
+            overflow-x: auto;
+            margin: 16px 0;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        code {
+            background-color: rgba(175, 184, 193, 0.2);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            font-size: 85%;
+            color: #24292f;
+        }
+
+        .step {
+            background-color: #fff;
+            border: 1px solid #d1d9e0;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .step strong {
+            color: #24292f;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .step ul {
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .step li {
+            margin-bottom: 6px;
+        }
+
+        a {
+            color: #0969da;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Table styling for consistency with the advanced docs */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+
+        th, td {
+            border: 1px solid #d1d9e0;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+            color: #24292f;
+        }
+
+        td {
+            color: #656d76;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            h2 {
+                font-size: 22px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+            
+            .example-section {
+                padding: 16px;
+            }
+            
+            pre {
+                padding: 12px;
+                font-size: 13px;
+            }
+        }
+
+        /* Code syntax highlighting for BAMC */
+        .bamc-command {
+            color: #0969da;
+            font-weight: 600;
+        }
+
+        .bamc-string {
+            color: #0a3069;
+        }
+
+        .bamc-comment {
+            color: #656d76;
+            font-style: italic;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background-color: #fff8c5;
+            border: 1px solid #d4a72c;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .highlight-box strong {
+            color: #9a6700;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <a href="index.html" class="back-link"
-        >&larr; Back to Documentation Home</a
-      >
-      <h1>The beginners guide to the BAMC Language</h1>
-      <p>
-        This section is designed to help you get started with the BAMC Language
-        even if you have little or no prior coding experience. We'll focus on
-        simple, practical tasks and walk you through them step-by-step.
-      </p>
-
-      <p>Here, you'll find:</p>
-      <ul>
-        <li>Simple explanations of what each command does.</li>
-        <li>Examples that are easy to understand and copy.</li>
-        <li>Tips for common tasks without needing complex coding.</li>
-      </ul>
-
-      <h2>Your First Steps</h2>
-      <p>
-        Let's begin with some fundamental commands. Each command below shows you
-        what to type and explains it in simple terms. Remember, you'll put these
-        lines into your BAMC script file!
-      </p>
-
-      <div class="example-section">
-        <h3>Script 1: Open a Browser and Visit a Website</h3>
+        <a href="index.html" class="back-link">Back to Documentation Home</a>
+        
+        <h1>The Beginner's Guide to the BAMC Language</h1>
+        
         <p>
-          This is how you tell your script to open a web browser and go to a
-          specific internet address.
+            This section is designed to help you get started with the BAMC Language
+            even if you have little or no prior coding experience. We'll focus on
+            simple, practical tasks and walk you through them step-by-step.
         </p>
-        <pre><code>browser "chrome"
-visit "https://www.google.com"
-wait-for-seconds 5</code></pre>
 
-        <div class="step">
-          <strong>What each line does:</strong>
-          <ul>
-            <li>
-              <code>browser "chrome"</code>: This line tells your script to use
-              the Chrome browser to perform the actions. (You could also use
-              <code>"firefox"</code> for the Firefox browser).
-            </li>
-            <li>
-              <code>visit "https://www.google.com"</code>: This command opens
-              your chosen browser and takes it to the Google website. You can
-              change <code>"https://www.google.com"</code> to any website
-              address you want to open!
-            </li>
-            <li>
-              <code>wait-for-seconds 5</code>: This tells the script to pause
-              for 5 seconds. This is useful to give websites time to fully load
-              or for you to see what's happening.
-            </li>
-          </ul>
+        <p>Here, you'll find:</p>
+        <ul>
+            <li>Simple explanations of what each command does.</li>
+            <li>Examples that are easy to understand and copy.</li>
+            <li>Tips for common tasks without needing complex coding.</li>
+        </ul>
+
+        <h2>Your First Steps</h2>
+        <p>
+            Let's begin with some fundamental commands. Each command below shows you
+            what to type and explains it in simple terms. Remember, you'll put these
+            lines into your BAMC script file!
+        </p>
+
+        <div class="example-section">
+            <h3>Script 1: Open a Browser and Visit a Website</h3>
+            <p>
+                This is how you tell your script to open a web browser and go to a
+                specific internet address.
+            </p>
+            <pre><code><span class="bamc-command">browser</span> <span class="bamc-string">"chrome"</span>
+<span class="bamc-command">visit</span> <span class="bamc-string">"https://www.google.com"</span>
+<span class="bamc-command">wait-for-seconds</span> 5</code></pre>
+
+            <div class="step">
+                <strong>What each line does:</strong>
+                <ul>
+                    <li>
+                        <code>browser "chrome"</code>: This line tells your script to use
+                        the Chrome browser to perform the actions. (You could also use
+                        <code>"firefox"</code> for the Firefox browser).
+                    </li>
+                    <li>
+                        <code>visit "https://www.google.com"</code>: This command opens
+                        your chosen browser and takes it to the Google website. You can
+                        change <code>"https://www.google.com"</code> to any website
+                        address you want to open!
+                    </li>
+                    <li>
+                        <code>wait-for-seconds 5</code>: This tells the script to pause
+                        for 5 seconds. This is useful to give websites time to fully load
+                        or for you to see what's happening.
+                    </li>
+                </ul>
+            </div>
+            <div class="highlight-box">
+                <strong>Try it yourself:</strong> Copy these lines into a .BAMC file
+                and run it. Your browser should open, go to Google, and wait for 5
+                seconds before closing (or moving to the next command if you add
+                more).
+            </div>
         </div>
-        <p>
-          <strong>Try it yourself:</strong> Copy these lines into a .BAMC file
-          and run it. Your browser should open, go to Google, and wait for 5
-          seconds before closing (or moving to the next command if you add
-          more).
-        </p>
-      </div>
 
-      <div class="example-section">
-        <h3>
-          Script 2: Visit a Website and Take a Screenshot (wikipedia.bamc)
-        </h3>
-        <p>
-          Sometimes you want to save a picture of what's on the screen. This
-          script shows you how to do just that.
-        </p>
-        <pre><code>browser "chrome"
-visit "https://www.wikipedia.org"
-wait-for-seconds 2
-take-screenshot "wikipedia.png"</code></pre>
+        <div class="example-section">
+            <h3>Script 2: Visit a Website and Take a Screenshot (wikipedia.bamc)</h3>
+            <p>
+                Sometimes you want to save a picture of what's on the screen. This
+                script shows you how to do just that.
+            </p>
+            <pre><code><span class="bamc-command">browser</span> <span class="bamc-string">"chrome"</span>
+<span class="bamc-command">visit</span> <span class="bamc-string">"https://www.wikipedia.org"</span>
+<span class="bamc-command">wait-for-seconds</span> 2
+<span class="bamc-command">take-screenshot</span> <span class="bamc-string">"wikipedia.png"</span></code></pre>
 
-        <div class="step">
-          <strong>What each line does:</strong>
-          <ul>
-            <li><code>browser "chrome"</code>: Starts Chrome.</li>
-            <li>
-              <code>visit "https://www.wikipedia.org"</code>: Goes to the
-              Wikipedia website.
-            </li>
-            <li>
-              <code>wait-for-seconds 2</code>: Waits for 2 seconds to ensure the
-              page loads.
-            </li>
-            <li>
-              <code>take-screenshot "wikipedia.png"</code>: This command takes a
-              picture (a "screenshot") of your browser screen and saves it as an
-              image file named <code>wikipedia.png</code> on your computer. You
-              can open this image file later to see what was on the screen.
-            </li>
-          </ul>
+            <div class="step">
+                <strong>What each line does:</strong>
+                <ul>
+                    <li><code>browser "chrome"</code>: Starts Chrome.</li>
+                    <li>
+                        <code>visit "https://www.wikipedia.org"</code>: Goes to the
+                        Wikipedia website.
+                    </li>
+                    <li>
+                        <code>wait-for-seconds 2</code>: Waits for 2 seconds to ensure the
+                        page loads.
+                    </li>
+                    <li>
+                        <code>take-screenshot "wikipedia.png"</code>: This command takes a
+                        picture (a "screenshot") of your browser screen and saves it as an
+                        image file named <code>wikipedia.png</code> on your computer. You
+                        can open this image file later to see what was on the screen.
+                    </li>
+                </ul>
+            </div>
+            <div class="highlight-box">
+                <strong>Try it yourself:</strong> Run this script and check the folder
+                where your BAMC script is saved for the "wikipedia.png" image file!
+            </div>
         </div>
-        <p>
-          <strong>Try it yourself:</strong> Run this script and check the folder
-          where your BAMC script is saved for the "wikipedia.png" image file!
-        </p>
-      </div>
 
-      <div class="example-section">
-        <h3>Script 3: Searching for Deals on eBay (ebay.bamc)</h3>
-        <p>
-          This script shows you how to open eBay, type something into the search
-          bar, click the search button, and then save the results page to your
-          computer.
-        </p>
-        <pre><code>browser "chrome"
-visit "https://www.ebay.com/"
-wait-for-seconds 1.5
-fill-text "#gh-ac" "Awesome deals"
-wait-for-seconds 1
-click "#gh-search-btn"
-wait-for-seconds 10
-save-as-html "ebay-search.html"</code></pre>
+        <div class="example-section">
+            <h3>Script 3: Searching for Deals on eBay (ebay.bamc)</h3>
+            <p>
+                This script shows you how to open eBay, type something into the search
+                bar, click the search button, and then save the results page to your
+                computer.
+            </p>
+            <pre><code><span class="bamc-command">browser</span> <span class="bamc-string">"chrome"</span>
+<span class="bamc-command">visit</span> <span class="bamc-string">"https://www.ebay.com/"</span>
+<span class="bamc-command">wait-for-seconds</span> 1.5
+<span class="bamc-command">fill-text</span> <span class="bamc-string">"#gh-ac"</span> <span class="bamc-string">"Awesome deals"</span>
+<span class="bamc-command">wait-for-seconds</span> 1
+<span class="bamc-command">click</span> <span class="bamc-string">"#gh-search-btn"</span>
+<span class="bamc-command">wait-for-seconds</span> 10
+<span class="bamc-command">save-as-html</span> <span class="bamc-string">"ebay-search.html"</span></code></pre>
 
-        <div class="step">
-          <strong>What each line does:</strong>
-          <ul>
-            <li>
-              <code>browser "chrome"</code>: This line tells your script to use
-              the Chrome browser.
-            </li>
-            <li>
-              <code>visit "https://www.ebay.com/"</code>: This command opens the
-              eBay website in the browser.
-            </li>
-            <li>
-              <code>wait-for-seconds 1.5</code>: A short pause to help the page
-              load.
-            </li>
-            <li>
-              <code>fill-text "#gh-ac" "Awesome deals"</code>: This is how your
-              script "types" into a box on a website.
-              <ul>
-                <li>
-                  <code>"#gh-ac"</code> is what's called a
-                  <a href="advanced_docs.html#selectors">selector</a> (Don't
-                  worry too much about how these work for now, just know they
-                  point to specific parts of a webpage!)
-                </li>
-                <li>
-                  <code>"Awesome deals"</code> is the text your script will type
-                  into that search box.
-                </li>
-              </ul>
-            </li>
-            <li>
-              <code>wait-for-seconds 1</code>: A single second pause after
-              typing.
-            </li>
-            <li>
-              <code>click "#gh-search-btn"</code>: This command "clicks" on
-              something.
-              <ul>
-                <li>
-                  <code>"#gh-search-btn"</code> is the
-                  <a href="advanced_docs.html#selectors">selector</a> for eBay's
-                  search button.
-                </li>
-              </ul>
-            </li>
-            <li>
-              <code>wait-for-seconds 10</code>: We wait a bit longer here to
-              make sure the search results page loads completely after clicking
-              the button.
-            </li>
-            <li>
-              <code>save-as-html "ebay-search.html"</code>: After the search,
-              this command saves the entire webpage you're currently looking at
-              as an HTML file named <code>ebay-search.html</code> on your
-              computer. You can open this file later in your web browser to see
-              the results.
-            </li>
-          </ul>
+            <div class="step">
+                <strong>What each line does:</strong>
+                <ul>
+                    <li>
+                        <code>browser "chrome"</code>: This line tells your script to use
+                        the Chrome browser.
+                    </li>
+                    <li>
+                        <code>visit "https://www.ebay.com/"</code>: This command opens the
+                        eBay website in the browser.
+                    </li>
+                    <li>
+                        <code>wait-for-seconds 1.5</code>: A short pause to help the page
+                        load.
+                    </li>
+                    <li>
+                        <code>fill-text "#gh-ac" "Awesome deals"</code>: This is how your
+                        script "types" into a box on a website.
+                        <ul>
+                            <li>
+                                <code>"#gh-ac"</code> is what's called a
+                                <a href="advanced_docs.html#selectors">selector</a> (Don't
+                                worry too much about how these work for now, just know they
+                                point to specific parts of a webpage!)
+                            </li>
+                            <li>
+                                <code>"Awesome deals"</code> is the text your script will type
+                                into that search box.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <code>wait-for-seconds 1</code>: A single second pause after
+                        typing.
+                    </li>
+                    <li>
+                        <code>click "#gh-search-btn"</code>: This command "clicks" on
+                        something.
+                        <ul>
+                            <li>
+                                <code>"#gh-search-btn"</code> is the
+                                <a href="advanced_docs.html#selectors">selector</a> for eBay's
+                                search button.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <code>wait-for-seconds 10</code>: We wait a bit longer here to
+                        make sure the search results page loads completely after clicking
+                        the button.
+                    </li>
+                    <li>
+                        <code>save-as-html "ebay-search.html"</code>: After the search,
+                        this command saves the entire webpage you're currently looking at
+                        as an HTML file named <code>ebay-search.html</code> on your
+                        computer. You can open this file later in your web browser to see
+                        the results.
+                    </li>
+                </ul>
+            </div>
+            <div class="highlight-box">
+                <strong>Try it yourself:</strong> Copy this script into a BAMC file,
+                run it, and see if you get an "ebay-search.html" file with your search
+                results!
+            </div>
         </div>
-        <p>
-          <strong>Try it yourself:</strong> Copy this script into a BAMC file,
-          run it, and see if you get an "ebay-search.html" file with your search
-          results!
-        </p>
-      </div>
 
-      <h2>Where to Go Next</h2>
-      <p>You've now seen some foundational things your BAMC scripts can do!</p>
-      <ul>
-        <li>
-          <strong>Experiment:</strong> Change the websites, the text you type,
-          or the search terms in these examples.
-        </li>
-        <li>
-          <strong>Combine:</strong> Try to put different commands together to
-          create your own unique scripts.
-        </li>
-        <li>
-          <strong>Ready for More?</strong> When you're ready for more technical
-          details, like understanding how to find a
-          <a href="advanced_docs.html#selectors">selector</a> for webpage
-          elements or using more advanced features, visit the
-          <a href="advanced_docs.html">Advanced User Reference</a>.
-        </li>
-      </ul>
+        <h2>Where to Go Next</h2>
+        <p>You've now seen some foundational things your BAMC scripts can do!</p>
+        <ul>
+            <li>
+                <strong>Experiment:</strong> Change the websites, the text you type,
+                or the search terms in these examples.
+            </li>
+            <li>
+                <strong>Combine:</strong> Try to put different commands together to
+                create your own unique scripts.
+            </li>
+            <li>
+                <strong>Ready for More?</strong> When you're ready for more technical
+                details, like understanding how to find a
+                <a href="advanced_docs.html#selectors">selector</a> for webpage
+                elements or using more advanced features, visit the
+                <a href="advanced_docs.html">Advanced User Reference</a>.
+            </li>
+        </ul>
     </div>
-  </body>
+</body>
 </html>
