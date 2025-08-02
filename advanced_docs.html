@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -39,7 +38,7 @@
       h3 {
         text-align: center;
       }
-      
+
       /* Mobile-first responsive table design */
       .command-item {
         background-color: #fff;
@@ -49,20 +48,20 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         border: 1px solid #ddd;
       }
-      
+
       .command-header {
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;
         margin-bottom: 10px;
       }
-      
+
       .command-name {
         font-size: 1.2em;
         font-weight: bold;
         color: #0056b3;
         margin-bottom: 5px;
       }
-      
+
       .command-syntax {
         background-color: #f8f9fa;
         padding: 8px;
@@ -72,33 +71,33 @@
         word-break: break-word;
         margin-bottom: 10px;
       }
-      
+
       .command-description {
         font-style: italic;
         color: #555;
         margin-bottom: 10px;
       }
-      
+
       .command-args {
         margin-top: 10px;
       }
-      
+
       .args-title {
         font-weight: bold;
         color: #0056b3;
         margin-bottom: 5px;
       }
-      
+
       /* Desktop table view */
       @media (min-width: 992px) {
         .mobile-layout {
           display: none;
         }
-        
+
         .desktop-layout {
           display: block;
         }
-        
+
         table {
           width: 100%;
           border-collapse: collapse;
@@ -106,7 +105,7 @@
           background-color: #fff;
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        
+
         th,
         td {
           border: 1px solid #ddd;
@@ -114,12 +113,12 @@
           text-align: left;
           vertical-align: top;
         }
-        
+
         th {
           background-color: #e0f2f7;
           font-weight: bold;
         }
-        
+
         th:nth-child(1),
         td:nth-child(1) {
           width: 22%;
@@ -137,17 +136,17 @@
           width: 25%;
         }
       }
-      
+
       @media (max-width: 991px) {
         .desktop-layout {
           display: none;
         }
-        
+
         .mobile-layout {
           display: block;
         }
       }
-      
+
       code {
         background-color: #eee;
         padding: 2px 4px;
@@ -162,7 +161,7 @@
           font-size: 14px;
         }
       }
-      
+
       .description {
         font-style: italic;
         color: #555;
@@ -177,16 +176,19 @@
         color: #0056b3;
       }
     </style>
+    <script src="moz-extension://c13ae201-5f1b-413d-8f95-f25bed3859af/assets/prompt.js"></script>
+    <script src="moz-extension://c13ae201-5f1b-413d-8f95-f25bed3859af/assets/prompt.js"></script>
+    <script src="moz-extension://c13ae201-5f1b-413d-8f95-f25bed3859af/assets/prompt.js"></script>
   </head>
   <body>
     <h1>BAMC - Advanced Documentation</h1>
-    <p style="text-align: center;">
+    <p style="text-align: center">
       This document provides a detailed breakdown of the argument types for each
       action and feature in the BAMC Language.
     </p>
 
     <h2>Actions</h2>
-    
+
     <!-- Mobile Layout -->
     <div class="mobile-layout">
       <div class="command-item">
@@ -194,296 +196,456 @@
           <div class="command-name">add-header</div>
           <div class="command-syntax">add-header "DNT" "1"</div>
         </div>
-        <div class="command-description">Adds an HTTP Header for the current request.</div>
+        <div class="command-description">
+          Adds an HTTP Header for the current request.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Header Name):</strong> <code>string</code><br>(e.g., "DNT")</li>
-            <li><strong>Argument 2 (Header Value):</strong> <code>string</code><br>(e.g., "1")</li>
+            <li>
+              <strong>Argument 1 (Header Name):</strong> <code>string</code
+              ><br />(e.g., "DNT")
+            </li>
+            <li>
+              <strong>Argument 2 (Header Value):</strong> <code>string</code
+              ><br />(e.g., "1")
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">add-headers</div>
-          <div class="command-syntax">add-headers {"header-name1": "header-value1", ...}</div>
+          <div class="command-syntax">
+            add-headers {"header-name1": "header-value1", ...}
+          </div>
         </div>
-        <div class="command-description">Adds multiple HTTP Headers for the current request via a JSON Object.</div>
+        <div class="command-description">
+          Adds multiple HTTP Headers for the current request via a JSON Object.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Headers):</strong> <code>JSON Object</code><br>(Key-value pairs where keys are header names (<code>string</code>) and values are header values (<code>string</code>))</li>
+            <li>
+              <strong>Argument 1 (Headers):</strong> <code>JSON Object</code
+              ><br />(Key-value pairs where keys are header names
+              (<code>string</code>) and values are header values
+              (<code>string</code>))
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">browser</div>
           <div class="command-syntax">browser "chrome"</div>
         </div>
-        <div class="command-description">Specifies the browser type. This MUST be the first valid line of the file. If not supplied, defaults to a Firefox instance or user agent.</div>
+        <div class="command-description">
+          Specifies the browser type. This MUST be the first valid line of the
+          file. If not supplied, defaults to a Firefox instance or user agent.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Browser Type):</strong> <code>string</code><br>("chrome" or "firefox")</li>
+            <li>
+              <strong>Argument 1 (Browser Type):</strong> <code>string</code
+              ><br />("chrome" or "firefox")
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">click</div>
           <div class="command-syntax">click "selector"</div>
         </div>
-        <div class="command-description">Clicks the specified button element. Supports ID, NAME, TAG NAME, and XPATH selectors.</div>
+        <div class="command-description">
+          Clicks the specified button element. Supports ID, NAME, TAG NAME, and
+          XPATH selectors.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Selector):</strong> <code>string</code><br>(A valid ID, NAME, TAG NAME, or XPATH selector for the element to click)</li>
+            <li>
+              <strong>Argument 1 (Selector):</strong> <code>string</code
+              ><br />(A valid ID, NAME, TAG NAME, or XPATH selector for the
+              element to click)
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">click-at-position</div>
           <div class="command-syntax">click-at-position "600" "600"</div>
         </div>
-        <div class="command-description">Clicks at a specific point on screen.</div>
+        <div class="command-description">
+          Clicks at a specific point on screen.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (X Coordinate):</strong> <code>string</code><br>(The X coordinate position on screen, e.g., "600")</li>
-            <li><strong>Argument 2 (Y Coordinate):</strong> <code>string</code><br>(The Y coordinate position on screen, e.g., "600")</li>
+            <li>
+              <strong>Argument 1 (X Coordinate):</strong> <code>string</code
+              ><br />(The X coordinate position on screen, e.g., "600")
+            </li>
+            <li>
+              <strong>Argument 2 (Y Coordinate):</strong> <code>string</code
+              ><br />(The Y coordinate position on screen, e.g., "600")
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">click-exp</div>
-          <div class="command-syntax">click-exp 'css-selector.item_element'</div>
+          <div class="command-syntax">
+            click-exp 'css-selector.item_element'
+          </div>
         </div>
-        <div class="command-description">Alternative to <code>click</code>; use this if <code>click</code> is causing issues. Supports CSS SELECTOR.</div>
+        <div class="command-description">
+          Alternative to <code>click</code>; use this if <code>click</code> is
+          causing issues. Supports CSS SELECTOR.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (CSS Selector):</strong> <code>string</code><br>(A valid CSS selector for the element to click)</li>
+            <li>
+              <strong>Argument 1 (CSS Selector):</strong> <code>string</code
+              ><br />(A valid CSS selector for the element to click)
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">close-current-tab</div>
           <div class="command-syntax">close-current-tab</div>
         </div>
-        <div class="command-description">Closes the current tab and will close the browser if there's only one open tab.</div>
+        <div class="command-description">
+          Closes the current tab and will close the browser if there's only one
+          open tab.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           No arguments.
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">end-javascript</div>
           <div class="command-syntax">end-javascript</div>
         </div>
-        <div class="command-description">Instructs the parser that the end of a JavaScript code block was reached. An error will be thrown if <code>end-javascript</code> is not found within the file (when a <code>start-javascript</code> is present).</div>
+        <div class="command-description">
+          Instructs the parser that the end of a JavaScript code block was
+          reached. An error will be thrown if <code>end-javascript</code> is not
+          found within the file (when a <code>start-javascript</code> is
+          present).
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           No arguments.
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">fill-text</div>
-          <div class="command-syntax">fill-text "selector" "Value you want to include"</div>
+          <div class="command-syntax">
+            fill-text "selector" "Value you want to include"
+          </div>
         </div>
-        <div class="command-description">Assigns the specified value to the selected element.</div>
+        <div class="command-description">
+          Assigns the specified value to the selected element.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Selector):</strong> <code>string</code><br>(A valid selector for the input element)</li>
-            <li><strong>Argument 2 (Value):</strong> <code>string</code><br>(The text value to assign to the element)</li>
+            <li>
+              <strong>Argument 1 (Selector):</strong> <code>string</code
+              ><br />(A valid selector for the input element)
+            </li>
+            <li>
+              <strong>Argument 2 (Value):</strong> <code>string</code><br />(The
+              text value to assign to the element)
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">fill-text-exp</div>
-          <div class="command-syntax">fill-text-exp "selector" "Value you want to include"</div>
+          <div class="command-syntax">
+            fill-text-exp "selector" "Value you want to include"
+          </div>
         </div>
-        <div class="command-description">More advanced version of <code>fill-text</code>.</div>
+        <div class="command-description">
+          More advanced version of <code>fill-text</code>.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Selector):</strong> <code>string</code><br>(A valid selector for the input element)</li>
-            <li><strong>Argument 2 (Value):</strong> <code>string</code><br>(The text value to assign to the element)</li>
+            <li>
+              <strong>Argument 1 (Selector):</strong> <code>string</code
+              ><br />(A valid selector for the input element)
+            </li>
+            <li>
+              <strong>Argument 2 (Value):</strong> <code>string</code><br />(The
+              text value to assign to the element)
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">get-text</div>
           <div class="command-syntax">get-text "selector"</div>
         </div>
-        <div class="command-description">Gets the text for a specified element. Supports ID, NAME, TAG NAME, and XPATH selectors.</div>
+        <div class="command-description">
+          Gets the text for a specified element. Supports ID, NAME, TAG NAME,
+          and XPATH selectors.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Selector):</strong> <code>string</code><br>(A valid ID, NAME, TAG NAME, or XPATH selector for the element)</li>
+            <li>
+              <strong>Argument 1 (Selector):</strong> <code>string</code
+              ><br />(A valid ID, NAME, TAG NAME, or XPATH selector for the
+              element)
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">open-new-tab</div>
-          <div class="command-syntax">open-new-tab "https://google.com" "3"</div>
+          <div class="command-syntax">
+            open-new-tab "https://google.com" "3"
+          </div>
         </div>
-        <div class="command-description">A new browser tab is opened, the system will then pause for the number of seconds specified, then visits the requested url.</div>
+        <div class="command-description">
+          A new browser tab is opened, the system will then pause for the number
+          of seconds specified, then visits the requested url.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (URL):</strong> <code>string</code><br>(The URL to visit in the new tab, e.g., "https://google.com")</li>
-            <li><strong>Argument 2 (Wait Time):</strong> <code>string</code><br>(The number of seconds to wait before visiting the URL, e.g., "3")</li>
+            <li>
+              <strong>Argument 1 (URL):</strong> <code>string</code><br />(The
+              URL to visit in the new tab, e.g., "https://google.com")
+            </li>
+            <li>
+              <strong>Argument 2 (Wait Time):</strong> <code>string</code
+              ><br />(The number of seconds to wait before visiting the URL,
+              e.g., "3")
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">save-as-html</div>
           <div class="command-syntax">save-as-html "filename.html"</div>
         </div>
-        <div class="command-description">Saves the current page's HTML to a file with the specified name.</div>
+        <div class="command-description">
+          Saves the current page's HTML to a file with the specified name.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (File Name):</strong> <code>string</code><br>(The path and name of the HTML file to save, e.g., "output.html")</li>
+            <li>
+              <strong>Argument 1 (File Name):</strong> <code>string</code
+              ><br />(The path and name of the HTML file to save, e.g.,
+              "output.html")
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">save-as-html-exp</div>
           <div class="command-syntax">save-as-html-exp "filename.html"</div>
         </div>
-        <div class="command-description">Saves the current page's HTML to a file with the specified name but uses different logic; use this if <code>save-as-html</code> doesn't fit your needs.</div>
+        <div class="command-description">
+          Saves the current page's HTML to a file with the specified name but
+          uses different logic; use this if <code>save-as-html</code> doesn't
+          fit your needs.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (File Name):</strong> <code>string</code><br>(The path and name of the HTML file to save)</li>
+            <li>
+              <strong>Argument 1 (File Name):</strong> <code>string</code
+              ><br />(The path and name of the HTML file to save)
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">select-option</div>
           <div class="command-syntax">select-option "selector" 2</div>
         </div>
-        <div class="command-description">Selects an <code>&lt;option&gt;</code> from a <code>&lt;select&gt;</code> dropdown menu. Currently only supports <code>&lt;select&gt;&lt;option&gt;&lt;/option&gt;&lt;/select&gt;</code>.</div>
+        <div class="command-description">
+          Selects an <code>&lt;option&gt;</code> from a
+          <code>&lt;select&gt;</code> dropdown menu. Currently only supports
+          <code>&lt;select&gt;&lt;option&gt;&lt;/option&gt;&lt;/select&gt;</code
+          >.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Selector):</strong> <code>string</code><br>(A valid selector for the <code>&lt;select&gt;</code> element)</li>
-            <li><strong>Argument 2 (Option Number):</strong> <code>integer</code><br>(The 0-based or 1-based index of the option to select, depending on implementation details; 2 typically means the 3rd item if 0-based, or 2nd if 1-based. Clarification needed for specific implementation.)</li>
+            <li>
+              <strong>Argument 1 (Selector):</strong> <code>string</code
+              ><br />(A valid selector for the
+              <code>&lt;select&gt;</code> element)
+            </li>
+            <li>
+              <strong>Argument 2 (Option Number):</strong> <code>integer</code
+              ><br />(The 0-based or 1-based index of the option to select,
+              depending on implementation details; 2 typically means the 3rd
+              item if 0-based, or 2nd if 1-based. Clarification needed for
+              specific implementation.)
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">select-element</div>
           <div class="command-syntax">select-element "selector"</div>
         </div>
-        <div class="command-description">Selects the element associated with the provided selector (if found). This currently works but, there's no logic to access the selected element; this should only be done if you're manually editing the compiled Python script.</div>
+        <div class="command-description">
+          Selects the element associated with the provided selector (if found).
+          This currently works but, there's no logic to access the selected
+          element; this should only be done if you're manually editing the
+          compiled Python script.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Selector):</strong> <code>string</code><br>(A valid selector for the element)</li>
+            <li>
+              <strong>Argument 1 (Selector):</strong> <code>string</code
+              ><br />(A valid selector for the element)
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">set-custom-useragent</div>
-          <div class="command-syntax">set-custom-useragent "Mozilla/5.0 (...)"</div>
+          <div class="command-syntax">
+            set-custom-useragent "Mozilla/5.0 (...)"
+          </div>
         </div>
-        <div class="command-description">Sets a custom user agent for the current script.</div>
+        <div class="command-description">
+          Sets a custom user agent for the current script.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (User Agent String):</strong> <code>string</code><br>(The full user agent string to set)</li>
+            <li>
+              <strong>Argument 1 (User Agent String):</strong>
+              <code>string</code><br />(The full user agent string to set)
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">start-javascript</div>
           <div class="command-syntax">start-javascript</div>
         </div>
-        <div class="command-description">Instructs the parser to read all following lines as a .js code block, until <code>end-javascript</code> is found; Will throw an error if <code>end-javascript</code> is not found within the file.</div>
+        <div class="command-description">
+          Instructs the parser to read all following lines as a .js code block,
+          until <code>end-javascript</code> is found; Will throw an error if
+          <code>end-javascript</code> is not found within the file.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           No arguments.
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">take-screenshot</div>
           <div class="command-syntax">take-screenshot "filename.png"</div>
         </div>
-        <div class="command-description">Takes a screenshot of the browser after executing the previous line. It's recommended to add a "wait-for-seconds" command before executing this.</div>
+        <div class="command-description">
+          Takes a screenshot of the browser after executing the previous line.
+          It's recommended to add a "wait-for-seconds" command before executing
+          this.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (File Name):</strong> <code>string</code><br>(The path and name of the PNG file to save, e.g., "screenshot.png")</li>
+            <li>
+              <strong>Argument 1 (File Name):</strong> <code>string</code
+              ><br />(The path and name of the PNG file to save, e.g.,
+              "screenshot.png")
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">visit</div>
-          <div class="command-syntax">visit "https://url-to-visit.com/page.html"</div>
+          <div class="command-syntax">
+            visit "https://url-to-visit.com/page.html"
+          </div>
         </div>
         <div class="command-description">Visits a specified URL.</div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (URL):</strong> <code>string</code><br>(A valid URL string, including protocol like "https://")</li>
+            <li>
+              <strong>Argument 1 (URL):</strong> <code>string</code><br />(A
+              valid URL string, including protocol like "https://")
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">wait-for-seconds</div>
           <div class="command-syntax">wait-for-seconds 1</div>
         </div>
-        <div class="command-description">Waits for the specified number of seconds before continuing. Supports decimals.</div>
+        <div class="command-description">
+          Waits for the specified number of seconds before continuing. Supports
+          decimals.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Seconds):</strong> <code>number</code><br>(The duration to wait, can be an integer or a floating-point number, e.g., 1 or 0.2)</li>
+            <li>
+              <strong>Argument 1 (Seconds):</strong> <code>number</code
+              ><br />(The duration to wait, can be an integer or a
+              floating-point number, e.g., 1 or 0.2)
+            </li>
           </ul>
         </div>
       </div>
     </div>
-    
+
     <!-- Desktop Layout -->
     <div class="desktop-layout">
       <table>
@@ -499,41 +661,73 @@
           <tr>
             <td><code>add-header</code></td>
             <td><code>add-header "DNT" "1"</code></td>
-            <td class="description">Adds an HTTP Header for the current request.</td>
+            <td class="description">
+              Adds an HTTP Header for the current request.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Header Name):</strong> <code>string</code><br>(e.g., "DNT")</li>
-                <li><strong>Argument 2 (Header Value):</strong> <code>string</code><br>(e.g., "1")</li>
+                <li>
+                  <strong>Argument 1 (Header Name):</strong> <code>string</code
+                  ><br />(e.g., "DNT")
+                </li>
+                <li>
+                  <strong>Argument 2 (Header Value):</strong> <code>string</code
+                  ><br />(e.g., "1")
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>add-headers</code></td>
-            <td><code>add-headers {"header-name1": "header-value1", ...}</code></td>
-            <td class="description">Adds multiple HTTP Headers for the current request via a JSON Object.</td>
+            <td>
+              <code>add-headers {"header-name1": "header-value1", ...}</code>
+            </td>
+            <td class="description">
+              Adds multiple HTTP Headers for the current request via a JSON
+              Object.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Headers):</strong> <code>JSON Object</code><br>(Key-value pairs where keys are header names (<code>string</code>) and values are header values (<code>string</code>))</li>
+                <li>
+                  <strong>Argument 1 (Headers):</strong> <code>JSON Object</code
+                  ><br />(Key-value pairs where keys are header names
+                  (<code>string</code>) and values are header values
+                  (<code>string</code>))
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>browser</code></td>
             <td><code>browser "chrome"</code></td>
-            <td class="description">Specifies the browser type. This MUST be the first valid line of the file. If not supplied, defaults to a Firefox instance or user agent.</td>
+            <td class="description">
+              Specifies the browser type. This MUST be the first valid line of
+              the file. If not supplied, defaults to a Firefox instance or user
+              agent.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Browser Type):</strong> <code>string</code><br>("chrome" or "firefox")</li>
+                <li>
+                  <strong>Argument 1 (Browser Type):</strong> <code>string</code
+                  ><br />("chrome" or "firefox")
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>click</code></td>
             <td><code>click "selector"</code></td>
-            <td class="description">Clicks the specified button element. Supports ID, NAME, TAG NAME, and XPATH selectors.</td>
+            <td class="description">
+              Clicks the specified button element. Supports ID, NAME, TAG NAME,
+              and XPATH selectors.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Selector):</strong> <code>string</code><br>(A valid ID, NAME, TAG NAME, or XPATH selector for the element to click)</li>
+                <li>
+                  <strong>Argument 1 (Selector):</strong> <code>string</code
+                  ><br />(A valid ID, NAME, TAG NAME, or XPATH selector for the
+                  element to click)
+                </li>
               </ul>
             </td>
           </tr>
@@ -543,140 +737,252 @@
             <td class="description">Clicks at a specific point on screen.</td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (X Coordinate):</strong> <code>string</code><br>(The X coordinate position on screen, e.g., "600")</li>
-                <li><strong>Argument 2 (Y Coordinate):</strong> <code>string</code><br>(The Y coordinate position on screen, e.g., "600")</li>
+                <li>
+                  <strong>Argument 1 (X Coordinate):</strong> <code>string</code
+                  ><br />(The X coordinate position on screen, e.g., "600")
+                </li>
+                <li>
+                  <strong>Argument 2 (Y Coordinate):</strong> <code>string</code
+                  ><br />(The Y coordinate position on screen, e.g., "600")
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>click-exp</code></td>
             <td><code>click-exp 'css-selector.item_element'</code></td>
-            <td class="description">Alternative to <code>click</code>; use this if <code>click</code> is causing issues. Supports CSS SELECTOR.</td>
+            <td class="description">
+              Alternative to <code>click</code>; use this if
+              <code>click</code> is causing issues. Supports CSS SELECTOR.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (CSS Selector):</strong> <code>string</code><br>(A valid CSS selector for the element to click)</li>
+                <li>
+                  <strong>Argument 1 (CSS Selector):</strong> <code>string</code
+                  ><br />(A valid CSS selector for the element to click)
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>close-current-tab</code></td>
             <td><code>close-current-tab</code></td>
-            <td class="description">Closes the current tab and will close the browser if there's only one open tab.</td>
+            <td class="description">
+              Closes the current tab and will close the browser if there's only
+              one open tab.
+            </td>
             <td>No arguments.</td>
           </tr>
           <tr>
             <td><code>end-javascript</code></td>
             <td><code>end-javascript</code></td>
-            <td class="description">Instructs the parser that the end of a JavaScript code block was reached. An error will be thrown if <code>end-javascript</code> is not found within the file (when a <code>start-javascript</code> is present).</td>
+            <td class="description">
+              Instructs the parser that the end of a JavaScript code block was
+              reached. An error will be thrown if <code>end-javascript</code> is
+              not found within the file (when a <code>start-javascript</code> is
+              present).
+            </td>
             <td>No arguments.</td>
           </tr>
           <tr>
             <td><code>fill-text</code></td>
-            <td><code>fill-text "selector" "Value you want to include"</code></td>
-            <td class="description">Assigns the specified value to the selected element.</td>
+            <td>
+              <code>fill-text "selector" "Value you want to include"</code>
+            </td>
+            <td class="description">
+              Assigns the specified value to the selected element.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Selector):</strong> <code>string</code><br>(A valid selector for the input element)</li>
-                <li><strong>Argument 2 (Value):</strong> <code>string</code><br>(The text value to assign to the element)</li>
+                <li>
+                  <strong>Argument 1 (Selector):</strong> <code>string</code
+                  ><br />(A valid selector for the input element)
+                </li>
+                <li>
+                  <strong>Argument 2 (Value):</strong> <code>string</code
+                  ><br />(The text value to assign to the element)
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>fill-text-exp</code></td>
-            <td><code>fill-text-exp "selector" "Value you want to include"</code></td>
-            <td class="description">More advanced version of <code>fill-text</code>.</td>
+            <td>
+              <code>fill-text-exp "selector" "Value you want to include"</code>
+            </td>
+            <td class="description">
+              More advanced version of <code>fill-text</code>.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Selector):</strong> <code>string</code><br>(A valid selector for the input element)</li>
-                <li><strong>Argument 2 (Value):</strong> <code>string</code><br>(The text value to assign to the element)</li>
+                <li>
+                  <strong>Argument 1 (Selector):</strong> <code>string</code
+                  ><br />(A valid selector for the input element)
+                </li>
+                <li>
+                  <strong>Argument 2 (Value):</strong> <code>string</code
+                  ><br />(The text value to assign to the element)
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>get-text</code></td>
             <td><code>get-text "selector"</code></td>
-            <td class="description">Gets the text for a specified element. Supports ID, NAME, TAG NAME, and XPATH selectors.</td>
+            <td class="description">
+              Gets the text for a specified element. Supports ID, NAME, TAG
+              NAME, and XPATH selectors.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Selector):</strong> <code>string</code><br>(A valid ID, NAME, TAG NAME, or XPATH selector for the element)</li>
+                <li>
+                  <strong>Argument 1 (Selector):</strong> <code>string</code
+                  ><br />(A valid ID, NAME, TAG NAME, or XPATH selector for the
+                  element)
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>open-new-tab</code></td>
             <td><code>open-new-tab "https://google.com" "3"</code></td>
-            <td class="description">A new browser tab is opened, the system will then pause for the number of seconds specified, then visits the requested url.</td>
+            <td class="description">
+              A new browser tab is opened, the system will then pause for the
+              number of seconds specified, then visits the requested url.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (URL):</strong> <code>string</code><br>(The URL to visit in the new tab, e.g., "https://google.com")</li>
-                <li><strong>Argument 2 (Wait Time):</strong> <code>string</code><br>(The number of seconds to wait before visiting the URL, e.g., "3")</li>
+                <li>
+                  <strong>Argument 1 (URL):</strong> <code>string</code
+                  ><br />(The URL to visit in the new tab, e.g.,
+                  "https://google.com")
+                </li>
+                <li>
+                  <strong>Argument 2 (Wait Time):</strong> <code>string</code
+                  ><br />(The number of seconds to wait before visiting the URL,
+                  e.g., "3")
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>save-as-html</code></td>
             <td><code>save-as-html "filename.html"</code></td>
-            <td class="description">Saves the current page's HTML to a file with the specified name.</td>
+            <td class="description">
+              Saves the current page's HTML to a file with the specified name.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (File Name):</strong> <code>string</code><br>(The path and name of the HTML file to save, e.g., "output.html")</li>
+                <li>
+                  <strong>Argument 1 (File Name):</strong> <code>string</code
+                  ><br />(The path and name of the HTML file to save, e.g.,
+                  "output.html")
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>save-as-html-exp</code></td>
             <td><code>save-as-html-exp "filename.html"</code></td>
-            <td class="description">Saves the current page's HTML to a file with the specified name but uses different logic; use this if <code>save-as-html</code> doesn't fit your needs.</td>
+            <td class="description">
+              Saves the current page's HTML to a file with the specified name
+              but uses different logic; use this if
+              <code>save-as-html</code> doesn't fit your needs.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (File Name):</strong> <code>string</code><br>(The path and name of the HTML file to save)</li>
+                <li>
+                  <strong>Argument 1 (File Name):</strong> <code>string</code
+                  ><br />(The path and name of the HTML file to save)
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>select-option</code></td>
             <td><code>select-option "selector" 2</code></td>
-            <td class="description">Selects an <code>&lt;option&gt;</code> from a <code>&lt;select&gt;</code> dropdown menu. Currently only supports <code>&lt;select&gt;&lt;option&gt;&lt;/option&gt;&lt;/select&gt;</code>.</td>
+            <td class="description">
+              Selects an <code>&lt;option&gt;</code> from a
+              <code>&lt;select&gt;</code> dropdown menu. Currently only supports
+              <code
+                >&lt;select&gt;&lt;option&gt;&lt;/option&gt;&lt;/select&gt;</code
+              >.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Selector):</strong> <code>string</code><br>(A valid selector for the <code>&lt;select&gt;</code> element)</li>
-                <li><strong>Argument 2 (Option Number):</strong> <code>integer</code><br>(The 0-based or 1-based index of the option to select, depending on implementation details; 2 typically means the 3rd item if 0-based, or 2nd if 1-based. Clarification needed for specific implementation.)</li>
+                <li>
+                  <strong>Argument 1 (Selector):</strong> <code>string</code
+                  ><br />(A valid selector for the
+                  <code>&lt;select&gt;</code> element)
+                </li>
+                <li>
+                  <strong>Argument 2 (Option Number):</strong>
+                  <code>integer</code><br />(The 0-based or 1-based index of the
+                  option to select, depending on implementation details; 2
+                  typically means the 3rd item if 0-based, or 2nd if 1-based.
+                  Clarification needed for specific implementation.)
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>select-element</code></td>
             <td><code>select-element "selector"</code></td>
-            <td class="description">Selects the element associated with the provided selector (if found). This currently works but, there's no logic to access the selected element; this should only be done if you're manually editing the compiled Python script.</td>
+            <td class="description">
+              Selects the element associated with the provided selector (if
+              found). This currently works but, there's no logic to access the
+              selected element; this should only be done if you're manually
+              editing the compiled Python script.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Selector):</strong> <code>string</code><br>(A valid selector for the element)</li>
+                <li>
+                  <strong>Argument 1 (Selector):</strong> <code>string</code
+                  ><br />(A valid selector for the element)
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>set-custom-useragent</code></td>
             <td><code>set-custom-useragent "Mozilla/5.0 (...)"</code></td>
-            <td class="description">Sets a custom user agent for the current script.</td>
+            <td class="description">
+              Sets a custom user agent for the current script.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (User Agent String):</strong> <code>string</code><br>(The full user agent string to set)</li>
+                <li>
+                  <strong>Argument 1 (User Agent String):</strong>
+                  <code>string</code><br />(The full user agent string to set)
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>start-javascript</code></td>
             <td><code>start-javascript</code></td>
-            <td class="description">Instructs the parser to read all following lines as a .js code block, until <code>end-javascript</code> is found; Will throw an error if <code>end-javascript</code> is not found within the file.</td>
+            <td class="description">
+              Instructs the parser to read all following lines as a .js code
+              block, until <code>end-javascript</code> is found; Will throw an
+              error if <code>end-javascript</code> is not found within the file.
+            </td>
             <td>No arguments.</td>
           </tr>
           <tr>
             <td><code>take-screenshot</code></td>
             <td><code>take-screenshot "filename.png"</code></td>
-            <td class="description">Takes a screenshot of the browser after executing the previous line. It's recommended to add a "wait-for-seconds" command before executing this.</td>
+            <td class="description">
+              Takes a screenshot of the browser after executing the previous
+              line. It's recommended to add a "wait-for-seconds" command before
+              executing this.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (File Name):</strong> <code>string</code><br>(The path and name of the PNG file to save, e.g., "screenshot.png")</li>
+                <li>
+                  <strong>Argument 1 (File Name):</strong> <code>string</code
+                  ><br />(The path and name of the PNG file to save, e.g.,
+                  "screenshot.png")
+                </li>
               </ul>
             </td>
           </tr>
@@ -686,17 +992,27 @@
             <td class="description">Visits a specified URL.</td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (URL):</strong> <code>string</code><br>(A valid URL string, including protocol like "https://")</li>
+                <li>
+                  <strong>Argument 1 (URL):</strong> <code>string</code><br />(A
+                  valid URL string, including protocol like "https://")
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>wait-for-seconds</code></td>
             <td><code>wait-for-seconds 1</code></td>
-            <td class="description">Waits for the specified number of seconds before continuing. Supports decimals.</td>
+            <td class="description">
+              Waits for the specified number of seconds before continuing.
+              Supports decimals.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Seconds):</strong> <code>number</code><br>(The duration to wait, can be an integer or a floating-point number, e.g., 1 or 0.2)</li>
+                <li>
+                  <strong>Argument 1 (Seconds):</strong> <code>number</code
+                  ><br />(The duration to wait, can be an integer or a
+                  floating-point number, e.g., 1 or 0.2)
+                </li>
               </ul>
             </td>
           </tr>
@@ -705,7 +1021,7 @@
     </div>
 
     <h2>Features</h2>
-    
+
     <!-- Mobile Layout for Features -->
     <div class="mobile-layout">
       <div class="command-item">
@@ -713,82 +1029,126 @@
           <div class="command-name">disable-pycache</div>
           <div class="command-syntax">feature "disable-pycache"</div>
         </div>
-        <div class="command-description">Instructs the compiler to disable the writing of the <code>__pycache__</code> directory. This directory is written by Visual Studio Code and contains <code>.pyc</code> files.</div>
+        <div class="command-description">
+          Instructs the compiler to disable the writing of the
+          <code>__pycache__</code> directory. This directory is written by
+          Visual Studio Code and contains <code>.pyc</code> files.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           No arguments for the feature declaration itself.
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">disable-ssl</div>
           <div class="command-syntax">feature "disable-ssl"</div>
         </div>
-        <div class="command-description">Disables SSL certificate authentication for the given session.</div>
+        <div class="command-description">
+          Disables SSL certificate authentication for the given session.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           No arguments for the feature declaration itself.
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">use-http-proxy</div>
-          <div class="command-syntax">feature "use-http-proxy" "USER:PASS@IP:PORT"</div>
+          <div class="command-syntax">
+            feature "use-http-proxy" "USER:PASS@IP:PORT"
+          </div>
         </div>
-        <div class="command-description">Uses the entered HTTP proxy for the session. Use "NULL:NULL@IP:PORT" if no user:pass authentication is required.</div>
+        <div class="command-description">
+          Uses the entered HTTP proxy for the session. Use "NULL:NULL@IP:PORT"
+          if no user:pass authentication is required.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Proxy String):</strong> <code>string</code><br>(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for no authentication.)</li>
+            <li>
+              <strong>Argument 1 (Proxy String):</strong> <code>string</code
+              ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for
+              no authentication.)
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">use-https-proxy</div>
-          <div class="command-syntax">feature "use-https-proxy" "USER:PASS@IP:PORT"</div>
+          <div class="command-syntax">
+            feature "use-https-proxy" "USER:PASS@IP:PORT"
+          </div>
         </div>
-        <div class="command-description">Uses the entered HTTPS proxy for the session. Use "NULL:NULL@IP:PORT" if no user:pass authentication is required.</div>
+        <div class="command-description">
+          Uses the entered HTTPS proxy for the session. Use "NULL:NULL@IP:PORT"
+          if no user:pass authentication is required.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Proxy String):</strong> <code>string</code><br>(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for no authentication.)</li>
+            <li>
+              <strong>Argument 1 (Proxy String):</strong> <code>string</code
+              ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for
+              no authentication.)
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">use-socks4-proxy</div>
-          <div class="command-syntax">feature "use-socks4-proxy" "USER:PASS@IP:PORT"</div>
+          <div class="command-syntax">
+            feature "use-socks4-proxy" "USER:PASS@IP:PORT"
+          </div>
         </div>
-        <div class="command-description">Uses the entered SOCKS4 proxy for the session. Use <code>feature "use-socks4-proxy" "NULL:NULL@IP:PORT"</code> if no user:pass authentication is required.</div>
+        <div class="command-description">
+          Uses the entered SOCKS4 proxy for the session. Use
+          <code>feature "use-socks4-proxy" "NULL:NULL@IP:PORT"</code> if no
+          user:pass authentication is required.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Proxy String):</strong> <code>string</code><br>(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for no authentication.)</li>
+            <li>
+              <strong>Argument 1 (Proxy String):</strong> <code>string</code
+              ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for
+              no authentication.)
+            </li>
           </ul>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">use-socks5-proxy</div>
-          <div class="command-syntax">feature "use-socks5-proxy" "USER:PASS@IP:PORT"</div>
+          <div class="command-syntax">
+            feature "use-socks5-proxy" "USER:PASS@IP:PORT"
+          </div>
         </div>
-        <div class="command-description">Uses the entered SOCKS5 proxy for the session. Use <code>feature "use-socks5-proxy" "NULL:NULL@IP:PORT"</code> if no user:pass authentication is required.</div>
+        <div class="command-description">
+          Uses the entered SOCKS5 proxy for the session. Use
+          <code>feature "use-socks5-proxy" "NULL:NULL@IP:PORT"</code> if no
+          user:pass authentication is required.
+        </div>
         <div class="command-args">
           <div class="args-title">Arguments:</div>
           <ul class="arg-list">
-            <li><strong>Argument 1 (Proxy String):</strong> <code>string</code><br>(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for no authentication.)</li>
+            <li>
+              <strong>Argument 1 (Proxy String):</strong> <code>string</code
+              ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for
+              no authentication.)
+            </li>
           </ul>
         </div>
       </div>
     </div>
-    
+
     <!-- Desktop Layout for Features -->
     <div class="desktop-layout">
       <table>
@@ -804,52 +1164,88 @@
           <tr>
             <td><code>disable-pycache</code></td>
             <td><code>feature "disable-pycache"</code></td>
-            <td class="description">Instructs the compiler to disable the writing of the <code>__pycache__</code> directory. This directory is written by Visual Studio Code and contains <code>.pyc</code> files.</td>
+            <td class="description">
+              Instructs the compiler to disable the writing of the
+              <code>__pycache__</code> directory. This directory is written by
+              Visual Studio Code and contains <code>.pyc</code> files.
+            </td>
             <td>No arguments for the feature declaration itself.</td>
           </tr>
           <tr>
             <td><code>disable-ssl</code></td>
             <td><code>feature "disable-ssl"</code></td>
-            <td class="description">Disables SSL certificate authentication for the given session.</td>
+            <td class="description">
+              Disables SSL certificate authentication for the given session.
+            </td>
             <td>No arguments for the feature declaration itself.</td>
           </tr>
           <tr>
             <td><code>use-http-proxy</code></td>
             <td><code>feature "use-http-proxy" "USER:PASS@IP:PORT"</code></td>
-            <td class="description">Uses the entered HTTP proxy for the session. Use "NULL:NULL@IP:PORT" if no user:pass authentication is required.</td>
+            <td class="description">
+              Uses the entered HTTP proxy for the session. Use
+              "NULL:NULL@IP:PORT" if no user:pass authentication is required.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Proxy String):</strong> <code>string</code><br>(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for no authentication.)</li>
+                <li>
+                  <strong>Argument 1 (Proxy String):</strong> <code>string</code
+                  ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT"
+                  for no authentication.)
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>use-https-proxy</code></td>
             <td><code>feature "use-https-proxy" "USER:PASS@IP:PORT"</code></td>
-            <td class="description">Uses the entered HTTPS proxy for the session. Use "NULL:NULL@IP:PORT" if no user:pass authentication is required.</td>
+            <td class="description">
+              Uses the entered HTTPS proxy for the session. Use
+              "NULL:NULL@IP:PORT" if no user:pass authentication is required.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Proxy String):</strong> <code>string</code><br>(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for no authentication.)</li>
+                <li>
+                  <strong>Argument 1 (Proxy String):</strong> <code>string</code
+                  ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT"
+                  for no authentication.)
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>use-socks4-proxy</code></td>
             <td><code>feature "use-socks4-proxy" "USER:PASS@IP:PORT"</code></td>
-            <td class="description">Uses the entered SOCKS4 proxy for the session. Use <code>feature "use-socks4-proxy" "NULL:NULL@IP:PORT"</code> if no user:pass authentication is required.</td>
+            <td class="description">
+              Uses the entered SOCKS4 proxy for the session. Use
+              <code>feature "use-socks4-proxy" "NULL:NULL@IP:PORT"</code> if no
+              user:pass authentication is required.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Proxy String):</strong> <code>string</code><br>(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for no authentication.)</li>
+                <li>
+                  <strong>Argument 1 (Proxy String):</strong> <code>string</code
+                  ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT"
+                  for no authentication.)
+                </li>
               </ul>
             </td>
           </tr>
           <tr>
             <td><code>use-socks5-proxy</code></td>
             <td><code>feature "use-socks5-proxy" "USER:PASS@IP:PORT"</code></td>
-            <td class="description">Uses the entered SOCKS5 proxy for the session. Use <code>feature "use-socks5-proxy" "NULL:NULL@IP:PORT"</code> if no user:pass authentication is required.</td>
+            <td class="description">
+              Uses the entered SOCKS5 proxy for the session. Use
+              <code>feature "use-socks5-proxy" "NULL:NULL@IP:PORT"</code> if no
+              user:pass authentication is required.
+            </td>
             <td>
               <ul class="arg-list">
-                <li><strong>Argument 1 (Proxy String):</strong> <code>string</code><br>(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT" for no authentication.)</li>
+                <li>
+                  <strong>Argument 1 (Proxy String):</strong> <code>string</code
+                  ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT"
+                  for no authentication.)
+                </li>
               </ul>
             </td>
           </tr>
@@ -858,69 +1254,85 @@
     </div>
 
     <h2 id="selectors">Selectors</h2>
-    <p>
+    <p style="text-align: center">
       For a tutorial on how to find selectors, please click
       <a href="#selector-tutorial">here</a>
     </p>
-    
+
     <!-- Mobile Layout for Selectors -->
     <div class="mobile-layout">
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">ID Selector</div>
         </div>
-        <div class="command-description">Selects an element by its unique <code>id</code> attribute.</div>
+        <div class="command-description">
+          Selects an element by its unique <code>id</code> attribute.
+        </div>
         <div class="command-args">
           <div class="args-title">Example:</div>
-          <code>"#myElementId"</code> (for <code>&lt;div id="myElementId"&gt;</code>)
+          <code>"#myElementId"</code> (for
+          <code>&lt;div id="myElementId"&gt;</code>)
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">NAME Selector</div>
         </div>
-        <div class="command-description">Selects an element by its <code>name</code> attribute, commonly used for form elements.</div>
+        <div class="command-description">
+          Selects an element by its <code>name</code> attribute, commonly used
+          for form elements.
+        </div>
         <div class="command-args">
           <div class="args-title">Example:</div>
-          <code>"[name=username]"</code> (for <code>&lt;input name="username"&gt;</code>)
+          <code>"[name=username]"</code> (for
+          <code>&lt;input name="username"&gt;</code>)
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">TAG NAME Selector</div>
         </div>
-        <div class="command-description">Selects all elements with a specific HTML tag name.</div>
+        <div class="command-description">
+          Selects all elements with a specific HTML tag name.
+        </div>
         <div class="command-args">
           <div class="args-title">Example:</div>
           <code>"button"</code> (for all <code>&lt;button&gt;</code> elements)
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">XPATH Selector</div>
         </div>
-        <div class="command-description">Selects elements using an XML Path Language (XPath) expression, allowing for complex selections.</div>
+        <div class="command-description">
+          Selects elements using an XML Path Language (XPath) expression,
+          allowing for complex selections.
+        </div>
         <div class="command-args">
           <div class="args-title">Example:</div>
           <code>"//div[@class='container']/p[2]"</code>
         </div>
       </div>
-      
+
       <div class="command-item">
         <div class="command-header">
           <div class="command-name">CSS Selector</div>
         </div>
-        <div class="command-description">Selects elements using Cascading Style Sheets (CSS) selectors, offering a flexible way to target elements based on their attributes, classes, IDs, and relationships.</div>
+        <div class="command-description">
+          Selects elements using Cascading Style Sheets (CSS) selectors,
+          offering a flexible way to target elements based on their attributes,
+          classes, IDs, and relationships.
+        </div>
         <div class="command-args">
           <div class="args-title">Example:</div>
-          <code>"div.product-item > h3.title"</code>
+          <code>"div.product-item &gt; h3.title"</code>
         </div>
       </div>
     </div>
-    
+
     <!-- Desktop Layout for Selectors -->
     <div class="desktop-layout">
       <table>
@@ -934,28 +1346,51 @@
         <tbody>
           <tr>
             <td>ID Selector</td>
-            <td class="description">Selects an element by its unique <code>id</code> attribute.</td>
-            <td><code>"myElementId"</code> (for <code>&lt;div id="myElementId"&gt;</code>)</td>
+            <td class="description">
+              Selects an element by its unique <code>id</code> attribute.
+            </td>
+            <td>
+              <code>"myElementId"</code> (for
+              <code>&lt;div id="myElementId"&gt;</code>)
+            </td>
           </tr>
           <tr>
             <td>NAME Selector</td>
-            <td class="description">Selects an element by its <code>name</code> attribute, commonly used for form elements.</td>
-            <td><code>"username"</code> (for <code>&lt;input name="username"&gt;</code>)</td>
+            <td class="description">
+              Selects an element by its <code>name</code> attribute, commonly
+              used for form elements.
+            </td>
+            <td>
+              <code>"username"</code> (for
+              <code>&lt;input name="username"&gt;</code>)
+            </td>
           </tr>
           <tr>
             <td>TAG NAME Selector</td>
-            <td class="description">Selects all elements with a specific HTML tag name.</td>
-            <td><code>"button"</code> (for all <code>&lt;button&gt;</code> elements)</td>
+            <td class="description">
+              Selects all elements with a specific HTML tag name.
+            </td>
+            <td>
+              <code>"button"</code> (for all
+              <code>&lt;button&gt;</code> elements)
+            </td>
           </tr>
           <tr>
             <td>XPATH Selector</td>
-            <td class="description">Selects elements using an XML Path Language (XPath) expression, allowing for complex selections.</td>
+            <td class="description">
+              Selects elements using an XML Path Language (XPath) expression,
+              allowing for complex selections.
+            </td>
             <td><code>"//div[@class='container']/p[2]"</code></td>
           </tr>
           <tr>
             <td>CSS Selector</td>
-            <td class="description">Selects elements using Cascading Style Sheets (CSS) selectors, offering a flexible way to target elements based on their attributes, classes, IDs, and relationships.</td>
-            <td><code>"div.product-item > h3.title"</code></td>
+            <td class="description">
+              Selects elements using Cascading Style Sheets (CSS) selectors,
+              offering a flexible way to target elements based on their
+              attributes, classes, IDs, and relationships.
+            </td>
+            <td><code>"div.product-item &gt; h3.title"</code></td>
           </tr>
         </tbody>
       </table>
@@ -963,67 +1398,85 @@
 
     <h2 id="selectorgadget-tutorial">Using SelectorGadget</h2>
     <section id="selector-tutorial">
-      <p>
+      <p style="text-align: center">
         SelectorGadget is a browser extension that makes it easy to find the
-        correct CSS selector for any element on a web page. This is incredibly
-        useful when you need to interact with specific elements using commands
-        like <code>click-exp</code> or <code>fill-text-exp</code>.
+        correct CSS selector for any element on a web page.
       </p>
       <h3>Installation</h3>
-      <ol>
+      <ul style="list-style-type: none; text-align: center; padding-left: 0px">
+        <strong>Install the Extension:</strong
+        ><br />
         <li>
-          <strong>Install the Extension:</strong> Search for "SelectorGadget" in
-          your browser's extension store (e.g., Chrome Web Store, Firefox
-          Add-ons). Install it.
+          <a
+            href="https://chromewebstore.google.com/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb"
+            >Chrome Extension Link</a
+          >
+          <br /><a href="">Firefox Extension Link</a>
         </li>
+        <br />
         <li>
-          <strong>Pin to Toolbar (Optional but Recommended):</strong> Once
-          installed, you might want to pin it to your browser's toolbar for
-          quick access.
+          <strong>Pin to Toolbar (Optional):</strong><br />Once you've installed
+          it, you can pin it to your browser's toolbar.
         </li>
-      </ol>
+      </ul>
       <h3>How to Use</h3>
-      <p>Follow these steps to find a CSS selector using SelectorGadget:</p>
-      <ol>
+
+      <ul
+        style="
+          list-style-type: none;
+          text-align: center;
+          padding-left: 0px;
+          margin-top: 16px;
+        "
+      >
         <li>
-          <strong>Activate SelectorGadget:</strong> Navigate to the web page you
-          want to inspect. Click on the SelectorGadget icon in your browser's
-          toolbar. A yellow bar will appear at the bottom of the screen.
+          <strong>Activate SelectorGadget:</strong><br />
+          Navigate to the web page you want to inspect. Click on the
+          SelectorGadget icon in your browser's toolbar. A yellow bar will
+          appear at the bottom of the screen.
         </li>
+        <br />
         <li>
-          <strong>Select Desired Elements (Green):</strong> Click on the element
-          you want to select. SelectorGadget will highlight it in
-          <strong>green</strong> and attempt to find a CSS selector that matches
-          it. It will also highlight other elements that match the same
-          selector.
+          <strong>Select Desired Elements:</strong><br />
+          Click on the element you want to select. SelectorGadget will highlight
+          it in <strong style="color: green">green</strong> and attempt to find
+          a CSS selector that matches it. It will also highlight other elements
+          that match the same selector.
         </li>
+        <br />
         <li>
-          <strong>Deselect Unwanted Elements (Red):</strong> If SelectorGadget
-          highlights elements you *don't* want to select (they will also be
-          green), click on them. They will turn <strong>red</strong>, and
-          SelectorGadget will refine the CSS selector to exclude them.
+          <strong>Deselect Unwanted Elements:</strong><br />
+          If SelectorGadget highlights elements you *don't* want to select (they
+          will also be green), click on them. They will turn
+          <strong style="color: red">red</strong>, and SelectorGadget will
+          refine the CSS selector to exclude them.
         </li>
+        <br />
         <li>
-          <strong>Select More Elements (Green):</strong> If there are other
-          elements you *do* want to select that are not currently highlighted,
-          click on them. They will turn <strong>green</strong>, and
-          SelectorGadget will adjust the CSS selector to include them.
+          <strong>Select More Elements:</strong><br />
+          If there are other elements you <strong>do</strong> want to select
+          that are not currently highlighted, click on them. They will turn
+          <strong style="color: green">green</strong>, and SelectorGadget will
+          adjust the CSS selector to include them.
         </li>
+        <br />
         <li>
-          <strong>Copy the Selector:</strong> The yellow bar at the bottom will
-          display the generated CSS selector. Once you are satisfied that only
-          the desired elements are highlighted in green, copy the selector from
-          this bar.
+          <strong>Copy the Selector:</strong><br />
+          The yellow bar at the bottom will display the generated CSS
+          selector.<br />Once you are satisfied that only the desired elements
+          are highlighted in green, copy the selector from this bar.
         </li>
+        <br />
         <li>
-          <strong>Test the Selector:</strong> (Optional but recommended) You can
-          paste the copied selector into your browser's developer console (F12,
-          then go to the Console tab) and use
-          <code>document.querySelectorAll('your-selector-here')</code> to see
-          which elements it selects.
+          <strong>Test the Selector:</strong><br />You can paste the copied
+          selector into your browser's developer console.<br />(F12, then go to
+          the Console tab)<br />and use<br />
+          <code>document.querySelectorAll('your-selector-here')</code><br />
+          to see which elements it selects.
         </li>
-      </ol>
-      <p>
+        <br />
+      </ul>
+      <p style="text-align: center">
         This CSS selector can now be used in your BAMC script with commands that
         support CSS selectors, such as <code>click-exp</code> or
         <code>fill-text-exp</code>.
