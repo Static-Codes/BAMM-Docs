@@ -816,7 +816,9 @@
               </div>
             </div>
             <div class="command-description">
-              Sets a custom user agent at the current point in the script, unlike <code>bamm --set-custom-useragent</code>, which sets this value at startup.
+              Sets a custom user agent at the current point in the script,
+              unlike <code>bamm --set-custom-useragent</code>, which sets this
+              value at startup.
             </div>
             <div class="command-args">
               <div class="args-title">Arguments:</div>
@@ -1223,7 +1225,9 @@
                 <td><code>set-custom-useragent</code></td>
                 <td><code>set-custom-useragent "Mozilla/5.0 (...)"</code></td>
                 <td class="description">
-                  Sets a custom user agent at the current point in the script, unlike <code>bamm --set-custom-useragent</code>, which sets this value at startup.
+                  Sets a custom user agent at the current point in the script,
+                  unlike <code>bamm --set-custom-useragent</code>, which sets
+                  this value at startup.
                 </td>
                 <td>
                   <ul class="arg-list">
@@ -1301,15 +1305,15 @@
 
         <h2>CLI Arguments</h2>
 
-        <!-- Mobile Layout -->
         <div class="mobile-layout">
           <div class="command-item">
             <div class="command-header">
               <div class="command-name">add</div>
-              <div class="command-syntax"><code>bamm add 'path/to/filename.bamc'</code></div>
+              <div class="command-syntax">bamm add 'filename.bamc'</div>
             </div>
             <div class="command-description">
-              Adds a <code>.bamc</code> file to the </code>userScripts</code> directory.
+              Adds a <code>.bamc</code> file to the
+              <code>userScripts</code> directory.
             </div>
             <div class="command-args">
               <div class="args-title">Arguments:</div>
@@ -1319,37 +1323,31 @@
                   ><br />(e.g., "path/to/filename.bamc")
                 </li>
               </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">backup</div>
+              <div class="command-syntax">bamm backup</div>
+            </div>
+            <div class="command-description">
+              Backs up all application files to <code>BAMM-Backup.zip</code>.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments.
             </div>
           </div>
 
           <div class="command-item">
             <div class="command-header">
               <div class="command-name">compile</div>
-              <div class="command-syntax">
-                <code>bamm compile 'path/to/filename.bamc'</code>
-              </div>
+              <div class="command-syntax">bamm compile 'filename.bamc'</div>
             </div>
             <div class="command-description">
-              Compiles a <code>.bamc</code> file that isn't located in the <code>userScripts</code> directory
-            </div>
-            <div class="command-args">
-              <div class="args-title">Arguments:</div>
-              <ul class="arg-list">
-                <li>
-                  <strong>Argument 1 (Filename)</strong> <code>string</code
-                  ><br />(e.g., "path/to/filename.bamc")
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="command-item">
-            <div class="command-header">
-              <div class="command-name">delete</div>
-              <div class="command-syntax"><code>bamm delete 'filename.bamc'</code></div>
-            </div>
-            <div class="command-description">
-              Deletes a <code>.bamc</code> file to the <code>userScripts</code> directory.
+              Compiles a <code>.bamc</code> file that isn't located in the
+              <code>userScripts</code> directory
             </div>
             <div class="command-args">
               <div class="args-title">Arguments:</div>
@@ -1383,11 +1381,135 @@
 
           <div class="command-item">
             <div class="command-header">
-              <div class="command-name">--set-custom-useragent</div>
-              <div class="command-syntax">bamm --set-custom-useragent=="Mozilla/5.0 (...)"</div>
+              <div class="command-name">restore</div>
+              <div class="command-syntax">bamm restore</div>
             </div>
             <div class="command-description">
-              Sets the user agent that the browser uses on start up.   
+              Looks for a backup of BAMM's data, if the data is found, a
+              restoration is attempted.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments.
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">--bs</div>
+              <div class="command-syntax">bamm --bs</div>
+            </div>
+            <div class="command-description">
+              Instructs BAMM to use
+              <a href="https://browserstack.com">BrowserStack</a> to run the
+              compiled scripts, works on all platforms except ChromeOS, as
+              chromebooks are too underpowered to run selenium.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments.
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">--editbsconf</div>
+              <div class="command-syntax">bamm --editbsconf</div>
+            </div>
+            <div class="command-description">
+              Edit and Overwrite Browserstack's YAML Config via an interactive
+              process. (For advanced users)
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments.
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">--force-error</div>
+              <div class="command-syntax">bamm --force-error</div>
+            </div>
+            <div class="command-description">
+              Forces a verbose error message, which is helpful for making a bug
+              report.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments.
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">--gui</div>
+              <div class="command-syntax">bamm --gui</div>
+            </div>
+            <div class="command-description">
+              Starts the Graphical User Interface for BAMM.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments.
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">--nohwc</div>
+              <div class="command-syntax">bamm --nohwc</div>
+            </div>
+            <div class="command-description">
+              Instructs BAMM not to check your system's hardware for
+              compatibility, this should not be done unless you've already
+              verified BAMM can run on your machine.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments.
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">--platform-debug</div>
+              <div class="command-syntax">bamm --platform-debug</div>
+            </div>
+            <div class="command-description">
+              Displays information on the operating system and machine currently
+              running BAMM.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments.
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">--query-display</div>
+              <div class="command-syntax">bamm --query-display</div>
+            </div>
+            <div class="command-description">
+              Displays the status of the <code>$DISPLAY</code> variable, use
+              this to check if your system supports BAMM's GUI.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments.
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">--set-custom-useragent</div>
+              <div class="command-syntax">
+                bamm --set-custom-useragent=="Mozilla/5.0 (...)"
+              </div>
+            </div>
+            <div class="command-description">
+              Sets the user agent that the browser uses on start up.
             </div>
             <div class="command-args">
               <div class="args-title">Arguments:</div>
@@ -1403,12 +1525,11 @@
           <div class="command-item">
             <div class="command-header">
               <div class="command-name">--set-timeout</div>
-              <div class="command-syntax">
-                bamm --set-timeout==5
-              </div>
+              <div class="command-syntax">bamm --set-timeout==5</div>
             </div>
             <div class="command-description">
-              Overrides the timeout for all actions, by default this is 10.
+              Alternative to <code>click</code>; use this if
+              <code>click</code> is causing issues. Supports CSS SELECTOR.
             </div>
             <div class="command-args">
               <div class="args-title">Arguments:</div>
@@ -1420,9 +1541,23 @@
               </ul>
             </div>
           </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">--version</div>
+              <div class="command-syntax">bamm --version</div>
+            </div>
+            <div class="command-description">
+              Displays the current version of BAMM, and whether there's a new
+              version available.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments.
+            </div>
+          </div>
         </div>
 
-        <!-- Desktop Layout -->
         <div class="desktop-layout">
           <table>
             <thead>
@@ -1436,9 +1571,10 @@
             <tbody>
               <tr>
                 <td><code>add</code></td>
-                <td><code>bamm add 'path/to/filename.bamc'</code></td>
+                <td><code>add 'filename.bamc'</code></td>
                 <td class="description">
-                  Adds a <code>.bamc</code> file to the </code>userScripts</code> directory.
+                  Adds a <code>.bamc</code> file to the
+                  <code>userScripts</code> directory.
                 </td>
                 <td>
                   <ul class="arg-list">
@@ -1449,13 +1585,23 @@
                   </ul>
                 </td>
               </tr>
+
+              <tr>
+                <td><code>backup</code></td>
+                <td><code>bamm backup</code></td>
+                <td class="description">
+                  Backs up all application files to
+                  <code>BAMM-Backup.zip</code>.
+                </td>
+                <td>No arguments.</td>
+              </tr>
+
               <tr>
                 <td><code>compile</code></td>
-                <td>
-                  <code>bamm compile 'path/to/filename.bamc'</code>
-                </td>
+                <td><code>bamm compile 'path/to/filename.bamc'</code></td>
                 <td class="description">
-                  Compiles a <code>.bamc</code> file that isn't located in the <code>userScripts</code> directory
+                  Compiles a <code>.bamc</code> file that isn't located in the
+                  <code>userScripts</code> directory
                 </td>
                 <td>
                   <ul class="arg-list">
@@ -1466,21 +1612,7 @@
                   </ul>
                 </td>
               </tr>
-              <tr>
-                <td><code>delete</code></td>
-                <td><code>bamm delete 'filename.bamc'</code></td>
-                <td class="description">
-                  Deletes a <code>.bamc</code> file to the <code>userScripts</code> directory.
-                </td>
-                <td>
-                  <ul class="arg-list">
-                    <li>
-                      <strong>Argument 1 (Filename)</strong> <code>string</code
-                      ><br />(e.g., "filename.bamc")
-                    </li>
-                  </ul>
-                </td>
-              </tr>
+
               <tr>
                 <td><code>help</code></td>
                 <td><code>bamm help "feature-name"</code></td>
@@ -1490,15 +1622,101 @@
                 <td>
                   <ul class="arg-list">
                     <li>
-                      <strong>Argument 1 (Feature name):</strong> <code>string</code
-                      ><br />(The specified feature you want to learn more about.)
+                      <strong>Argument 1 (Feature name):</strong>
+                      <code>string</code><br />(The specified feature you want
+                      to learn more about.)
                     </li>
                   </ul>
                 </td>
               </tr>
+
+              <tr>
+                <td><code>restore</code></td>
+                <td><code>bamm restore</code></td>
+                <td class="description">
+                  Looks for a backup of BAMM's data, if the data is found, a
+                  restoration is attempted.
+                </td>
+                <td>No arguments.</td>
+              </tr>
+
+              <tr>
+                <td><code>--bs</code></td>
+                <td><code>bamm --bs</code></td>
+                <td class="description">
+                  Instructs BAMM to use
+                  <a href="https://browserstack.com">BrowserStack</a> to run the
+                  compiled scripts, works on all platforms except ChromeOS, as
+                  chromebooks are too underpowered to run selenium.
+                </td>
+                <td>No arguments.</td>
+              </tr>
+
+              <tr>
+                <td><code>--editbsconf</code></td>
+                <td><code>bamm --editbsconf</code></td>
+                <td class="description">
+                  Edit and Overwrite Browserstack's YAML Config via an
+                  interactive process. (For advanced users)
+                </td>
+                <td>No arguments.</td>
+              </tr>
+
+              <tr>
+                <td><code>--force-error</code></td>
+                <td><code>bamm --force-error</code></td>
+                <td class="description">
+                  Forces a verbose error message, which is helpful for making a
+                  bug report.
+                </td>
+                <td>No arguments.</td>
+              </tr>
+
+              <tr>
+                <td><code>--gui</code></td>
+                <td><code>bamm --gui</code></td>
+                <td class="description">
+                  Starts the Graphical User Interface for BAMM.
+                </td>
+                <td>No arguments.</td>
+              </tr>
+
+              <tr>
+                <td><code>--nohwc</code></td>
+                <td><code>bamm --nohwc</code></td>
+                <td class="description">
+                  Instructs BAMM not to check your system's hardware for
+                  compatibility, this should not be done unless you've already
+                  verified BAMM can run on your machine.
+                </td>
+                <td>No arguments.</td>
+              </tr>
+
+              <tr>
+                <td><code>--platform-debug</code></td>
+                <td><code>bamm --platform-debug</code></td>
+                <td class="description">
+                  Displays information on the operating system and machine
+                  currently running BAMM.
+                </td>
+                <td>No arguments.</td>
+              </tr>
+
+              <tr>
+                <td><code>--query-display</code></td>
+                <td><code>bamm --query-display</code></td>
+                <td class="description">
+                  Displays the status of the <code>$DISPLAY</code> variable, use
+                  this to check if your system supports BAMM's GUI.
+                </td>
+                <td>No arguments.</td>
+              </tr>
+
               <tr>
                 <td><code>--set-custom-useragent</code></td>
-                <td><code>bamm --set-custom-useragent=="Mozilla/5.0 (...)"</code></td>
+                <td>
+                  <code>bamm --set-custom-useragent=="Mozilla/5.0 (...)"</code>
+                </td>
                 <td class="description">
                   Sets the user agent that the browser uses on start up.
                 </td>
@@ -1506,11 +1724,13 @@
                   <ul class="arg-list">
                     <li>
                       <strong>Argument 1 (User Agent String):</strong>
-                      <code>string</code><br />(The full user agent string to set)
+                      <code>string</code><br />(The full user agent string to
+                      set)
                     </li>
                   </ul>
                 </td>
               </tr>
+
               <tr>
                 <td><code>--set-timeout</code></td>
                 <td><code>bamm --set-timeout==5</code></td>
@@ -1526,6 +1746,16 @@
                     </li>
                   </ul>
                 </td>
+              </tr>
+
+              <tr>
+                <td><code>--version</code></td>
+                <td><code>bamm --version</code></td>
+                <td class="description">
+                  Displays the current version of BAMM, and whether there's a
+                  new version available.
+                </td>
+                <td>No arguments.</td>
               </tr>
             </tbody>
           </table>
@@ -2128,7 +2358,6 @@ save-as-html "page-content.html"</pre
           <code>visit</code>, <code>wait-for-seconds</code>, and
           <code>take-screenshot</code> to get familiar with the syntax.
         </div>
-      
       </div>
       <section id="config-tutorial">
         <div class="tutorial-container">
