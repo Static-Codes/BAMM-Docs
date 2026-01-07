@@ -15,7 +15,8 @@
       }
 
       .main-container {
-        max-width: 1200px;
+        /* max-width: 1200px; */
+        max-width: 100%;
         margin: 0 auto;
         background: white;
         border-radius: 15px;
@@ -131,7 +132,7 @@
 
       .arg-list li {
         margin-bottom: 8px;
-        line-height: 1.4;
+        line-height: 1.6;
       }
 
       /* Desktop table view */
@@ -447,7 +448,7 @@
       <div class="content-wrapper">
         <h2>Actions</h2>
 
-        <!-- Mobile Layout -->
+        <!-- Mobile Layout for Actions -->
         <div class="mobile-layout">
           <div class="command-item">
             <div class="command-header">
@@ -910,7 +911,7 @@
           </div>
         </div>
 
-        <!-- Desktop Layout -->
+        <!-- Desktop Layout for Actions -->
         <div class="desktop-layout">
           <table>
             <thead>
@@ -1042,7 +1043,11 @@
                   Closes the current tab and will close the browser if there's
                   only one open tab.
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
               <tr>
                 <td><code>end-javascript</code></td>
@@ -1053,7 +1058,11 @@
                   <code>end-javascript</code> is not found within the file (when
                   a <code>start-javascript</code> is present).
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
               <tr>
                 <td><code>fill-text</code></td>
@@ -1248,7 +1257,11 @@
                   an error if <code>end-javascript</code> is not found within
                   the file.
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
               <tr>
                 <td><code>take-screenshot</code></td>
@@ -1305,6 +1318,7 @@
 
         <h2>CLI Arguments</h2>
 
+        <!-- Mobile Layout for Arguments -->
         <div class="mobile-layout">
           <div class="command-item">
             <div class="command-header">
@@ -1381,6 +1395,69 @@
 
           <div class="command-item">
             <div class="command-header">
+              <div class="command-name">new</div>
+              <div class="command-syntax">bamm new "filename.bamc"</div>
+              <div class="command-syntax">bamm -n "filename.bamc"</div>
+            </div>
+            <div class="command-description">
+              Creates a new .BAMC file in the userScripts directory. Prompts the
+              user to select a custom text editor to open the specified file. If
+              a custom text editor is not found, the OS default is used.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Filename):</strong>
+                  <code>string</code><br />(The name of the file you wish to
+                  create)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">open</div>
+              <div class="command-syntax">bamm open "filename.bamc"</div>
+              <div class="command-syntax">bamm -o "filename.bamc"</div>
+            </div>
+            <div class="command-description">
+              Opens a .BAMC file that exists in the userScripts directory. If
+              this file does not exist, the file is automatically created. The
+              user is then prompted to select a custom text editor to open the
+              specified file. If a custom text editor is not found, the OS
+              default is used.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Filename):</strong>
+                  <code>string</code><br />(The name of the file you wish to
+                  open or create)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">restore</div>
+              <div class="command-syntax">bamm restore</div>
+            </div>
+            <div class="command-description">
+              Looks for a backup of BAMM's data, if the data is found, a
+              restoration is attempted.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments.
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
               <div class="command-name">restore</div>
               <div class="command-syntax">bamm restore</div>
             </div>
@@ -1402,8 +1479,8 @@
             <div class="command-description">
               Instructs BAMM to use
               <a href="https://browserstack.com">BrowserStack</a> to run the
-              compiled scripts, works on all platforms but is the default on ChromeOS, as
-              chromebooks are too underpowered to run selenium.
+              compiled scripts, works on all platforms but is the default on
+              ChromeOS, as chromebooks are too underpowered to run selenium.
             </div>
             <div class="command-args">
               <div class="args-title">Arguments:</div>
@@ -1558,6 +1635,7 @@
           </div>
         </div>
 
+        <!-- Desktop Layout for Arguments -->
         <div class="desktop-layout">
           <table>
             <thead>
@@ -1593,7 +1671,11 @@
                   Backs up all application files to
                   <code>BAMM-Backup.zip</code>.
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
 
               <tr>
@@ -1631,13 +1713,68 @@
               </tr>
 
               <tr>
+                <td><code>new</code></td>
+                <td>
+                  <code
+                    >bamm new "filename.bamc"<br />&nbsp;bamm -n
+                    "filename.bamc"</code
+                  >
+                </td>
+                <td class="description">
+                  Creates a new .BAMC file in the userScripts directory. Prompts
+                  the user to select a custom text editor to open the specified
+                  file. If a custom text editor is not found, the OS default is
+                  used.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Filename):</strong>
+                      <code>string</code><br />(The name of the file you wish to
+                      create)
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td><code>open</code></td>
+                <td>
+                  <code
+                    >bamm open "filename.bamc"<br />&nbsp;bamm -o
+                    "filename.bamc"</code
+                  >
+                </td>
+                <td class="description">
+                  Opens a .BAMC file that exists in the userScripts directory.
+                  If this file does not exist, the file is automatically
+                  created. The user is then prompted to select a custom text
+                  editor to open the specified file. If a custom text editor is
+                  not found, the OS default is used.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Filename):</strong>
+                      <code>string</code><br />(The name of the file you wish to
+                      open or create)
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
                 <td><code>restore</code></td>
                 <td><code>bamm restore</code></td>
                 <td class="description">
                   Looks for a backup of BAMM's data, if the data is found, a
                   restoration is attempted.
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
 
               <tr>
@@ -1649,7 +1786,11 @@
                   compiled scripts, works on all platforms except ChromeOS, as
                   chromebooks are too underpowered to run selenium.
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
 
               <tr>
@@ -1659,7 +1800,11 @@
                   Edit and Overwrite Browserstack's YAML Config via an
                   interactive process. (For advanced users)
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
 
               <tr>
@@ -1669,7 +1814,11 @@
                   Forces a verbose error message, which is helpful for making a
                   bug report.
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
 
               <tr>
@@ -1678,7 +1827,11 @@
                 <td class="description">
                   Starts the Graphical User Interface for BAMM.
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
 
               <tr>
@@ -1689,7 +1842,11 @@
                   compatibility, this should not be done unless you've already
                   verified BAMM can run on your machine.
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
 
               <tr>
@@ -1699,7 +1856,11 @@
                   Displays information on the operating system and machine
                   currently running BAMM.
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
 
               <tr>
@@ -1709,7 +1870,11 @@
                   Displays the status of the <code>$DISPLAY</code> variable, use
                   this to check if your system supports BAMM's GUI.
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
 
               <tr>
@@ -1755,7 +1920,11 @@
                   Displays the current version of BAMM, and whether there's a
                   new version available.
                 </td>
-                <td>No arguments.</td>
+                <td>
+                  <ul class="arg-list">
+                    <li><strong>No arguments.</strong><br /></li>
+                  </ul>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -2148,6 +2317,7 @@
           </table>
         </div>
 
+        <!-- Selector Tutorial -->
         <h2 id="selector-tutorial">Using SelectorGadget</h2>
         <section id="selector-tutorial">
           <div class="tutorial-intro">
