@@ -1936,6 +1936,46 @@
         <div class="mobile-layout">
           <div class="command-item">
             <div class="command-header">
+              <div class="command-name">add-extension</div>
+              <div class="command-syntax">
+                feature "add-extension" "path/to/extension"
+              </div>
+            </div>
+            <div class="command-description">
+              Downloads the extension, validates it's contents, then install it
+              as an add-on to the current Selenium extension.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Extension path):</strong>
+                  <code>string</code><br />
+                  Supported formats:
+                  <code>
+                    <h5>
+                      "https://chromewebstore.google.com/detail/extension-name/manifest-id"
+                    </h5>
+                    <br />
+                    <h5>
+                      "https://addons.mozilla.org/en-US/firefox/addon/extension-name"
+                    </h5>
+                    <br />
+                    <h5>
+                      "https://addons.mozilla.org/firefox/downloads/file/extension-id/extension-name.xpi"
+                    </h5>
+                    <br />
+                    <h5>"file://path/to/firefox/extension.xpi"</h5>
+                    <br />
+                    <h5>"file://path/to/chrome/extension.crx"</h5>
+                  </code>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
               <div class="command-name">disable-pycache</div>
               <div class="command-syntax">feature "disable-pycache"</div>
             </div>
@@ -2070,7 +2110,39 @@
                 <th>Argument Types</th>
               </tr>
             </thead>
+
             <tbody>
+              <tr>
+                <td><code>add-extension</code></td>
+                <td>
+                  <code>feature "add-extension" "path/to/extension"</code>
+                </td>
+                <td class="description">
+                  Downloads the extension, validates it's contents, then install
+                  it as an add-on to the current Selenium extension.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Extension path):</strong>
+                      <code>string</code>
+                      <br />Supported formats:
+                      <h5>
+                        "https://chromewebstore.google.com/detail/extension-name/manifest-id"
+                      </h5>
+                      <h5>
+                        "https://addons.mozilla.org/en-US/firefox/addon/extension-name"
+                      </h5>
+                      <h5>
+                        "https://addons.mozilla.org/firefox/downloads/file/extension-id/extension-name.xpi"
+                      </h5>
+                      <h5>"file://path/to/firefox/extension.xpi"</h5>
+                      <h5>"file://path/to/chrome/extension.crx"</h5>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+
               <tr>
                 <td><code>disable-pycache</code></td>
                 <td><code>feature "disable-pycache"</code></td>
@@ -2089,6 +2161,7 @@
                 </td>
                 <td>No arguments for the feature declaration itself.</td>
               </tr>
+
               <tr>
                 <td><code>use-http-proxy</code></td>
                 <td>
@@ -2109,6 +2182,7 @@
                   </ul>
                 </td>
               </tr>
+
               <tr>
                 <td><code>use-https-proxy</code></td>
                 <td>
