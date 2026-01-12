@@ -1316,6 +1316,323 @@
           </table>
         </div>
 
+        <h2>Features</h2>
+
+        <!-- Mobile Layout for Features -->
+        <div class="mobile-layout">
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">add-extension</div>
+              <div class="command-syntax">
+                feature "add-extension" "path/to/extension"
+              </div>
+            </div>
+            <div class="command-description">
+              Downloads the extension, validates it's contents, then install it
+              as an add-on to the current Selenium extension.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Extension path):</strong>
+                  <code>string</code><br />
+                  Supported formats:
+                  <code>
+                    <h5>
+                      "https://chromewebstore.google.com/detail/extension-name/manifest-id"
+                    </h5>
+                    <br />
+                    <h5>
+                      "https://addons.mozilla.org/en-US/firefox/addon/extension-name"
+                    </h5>
+                    <br />
+                    <h5>
+                      "https://addons.mozilla.org/firefox/downloads/file/extension-id/extension-name.xpi"
+                    </h5>
+                    <br />
+                    <h5>"file://path/to/firefox/extension.xpi"</h5>
+                    <br />
+                    <h5>"file://path/to/chrome/extension.crx"</h5>
+                  </code>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">disable-pycache</div>
+              <div class="command-syntax">feature "disable-pycache"</div>
+            </div>
+            <div class="command-description">
+              Instructs the compiler to disable the writing of the
+              <code>__pycache__</code> directory. This directory is written by
+              Visual Studio Code and contains <code>.pyc</code> files.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments for the feature declaration itself.
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">disable-ssl</div>
+              <div class="command-syntax">feature "disable-ssl"</div>
+            </div>
+            <div class="command-description">
+              Disables SSL certificate authentication for the given session.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              No arguments for the feature declaration itself.
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">use-http-proxy</div>
+              <div class="command-syntax">
+                feature "use-http-proxy" "USER:PASS@IP:PORT"
+              </div>
+            </div>
+            <div class="command-description">
+              Uses the entered HTTP proxy for the session. Use
+              "NULL:NULL@IP:PORT" if no user:pass authentication is required.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Proxy String):</strong> <code>string</code
+                  ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT"
+                  for no authentication.)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">use-https-proxy</div>
+              <div class="command-syntax">
+                feature "use-https-proxy" "USER:PASS@IP:PORT"
+              </div>
+            </div>
+            <div class="command-description">
+              Uses the entered HTTPS proxy for the session. Use
+              "NULL:NULL@IP:PORT" if no user:pass authentication is required.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Proxy String):</strong> <code>string</code
+                  ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT"
+                  for no authentication.)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">use-socks4-proxy</div>
+              <div class="command-syntax">
+                feature "use-socks4-proxy" "USER:PASS@IP:PORT"
+              </div>
+            </div>
+            <div class="command-description">
+              Uses the entered SOCKS4 proxy for the session. Use
+              <code>feature "use-socks4-proxy" "NULL:NULL@IP:PORT"</code> if no
+              user:pass authentication is required.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Proxy String):</strong> <code>string</code
+                  ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT"
+                  for no authentication.)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="command-item">
+            <div class="command-header">
+              <div class="command-name">use-socks5-proxy</div>
+              <div class="command-syntax">
+                feature "use-socks5-proxy" "USER:PASS@IP:PORT"
+              </div>
+            </div>
+            <div class="command-description">
+              Uses the entered SOCKS5 proxy for the session. Use
+              <code>feature "use-socks5-proxy" "NULL:NULL@IP:PORT"</code> if no
+              user:pass authentication is required.
+            </div>
+            <div class="command-args">
+              <div class="args-title">Arguments:</div>
+              <ul class="arg-list">
+                <li>
+                  <strong>Argument 1 (Proxy String):</strong> <code>string</code
+                  ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT"
+                  for no authentication.)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop Layout for Features -->
+        <div class="desktop-layout">
+          <table>
+            <thead>
+              <tr>
+                <th>Command</th>
+                <th>Syntax Example</th>
+                <th>Description</th>
+                <th>Argument Types</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><code>add-extension</code></td>
+                <td>
+                  <code>feature "add-extension" "path/to/extension"</code>
+                </td>
+                <td class="description">
+                  Downloads the extension, validates it's contents, then install
+                  it as an add-on to the current Selenium extension.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Extension path):</strong>
+                      <code>string</code>
+                      <br />Supported formats:
+                      <h5>
+                        "https://chromewebstore.google.com/detail/extension-name/manifest-id"
+                      </h5>
+                      <h5>
+                        "https://addons.mozilla.org/en-US/firefox/addon/extension-name"
+                      </h5>
+                      <h5>
+                        "https://addons.mozilla.org/firefox/downloads/file/extension-id/extension-name.xpi"
+                      </h5>
+                      <h5>"file://path/to/firefox/extension.xpi"</h5>
+                      <h5>"file://path/to/chrome/extension.crx"</h5>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td><code>disable-pycache</code></td>
+                <td><code>feature "disable-pycache"</code></td>
+                <td class="description">
+                  Instructs the compiler to disable the writing of the
+                  <code>__pycache__</code> directory. This directory is written
+                  by Visual Studio Code and contains <code>.pyc</code> files.
+                </td>
+                <td>No arguments for the feature declaration itself.</td>
+              </tr>
+              <tr>
+                <td><code>disable-ssl</code></td>
+                <td><code>feature "disable-ssl"</code></td>
+                <td class="description">
+                  Disables SSL certificate authentication for the given session.
+                </td>
+                <td>No arguments for the feature declaration itself.</td>
+              </tr>
+
+              <tr>
+                <td><code>use-http-proxy</code></td>
+                <td>
+                  <code>feature "use-http-proxy" "USER:PASS@IP:PORT"</code>
+                </td>
+                <td class="description">
+                  Uses the entered HTTP proxy for the session. Use
+                  "NULL:NULL@IP:PORT" if no user:pass authentication is
+                  required.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Proxy String):</strong>
+                      <code>string</code><br />(Format: "USER:PASS@IP:PORT". Use
+                      "NULL:NULL@IP:PORT" for no authentication.)
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <td><code>use-https-proxy</code></td>
+                <td>
+                  <code>feature "use-https-proxy" "USER:PASS@IP:PORT"</code>
+                </td>
+                <td class="description">
+                  Uses the entered HTTPS proxy for the session. Use
+                  "NULL:NULL@IP:PORT" if no user:pass authentication is
+                  required.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Proxy String):</strong>
+                      <code>string</code><br />(Format: "USER:PASS@IP:PORT". Use
+                      "NULL:NULL@IP:PORT" for no authentication.)
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><code>use-socks4-proxy</code></td>
+                <td>
+                  <code>feature "use-socks4-proxy" "USER:PASS@IP:PORT"</code>
+                </td>
+                <td class="description">
+                  Uses the entered SOCKS4 proxy for the session. Use
+                  <code>feature "use-socks4-proxy" "NULL:NULL@IP:PORT"</code> if
+                  no user:pass authentication is required.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Proxy String):</strong>
+                      <code>string</code><br />(Format: "USER:PASS@IP:PORT". Use
+                      "NULL:NULL@IP:PORT" for no authentication.)
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><code>use-socks5-proxy</code></td>
+                <td>
+                  <code>feature "use-socks5-proxy" "USER:PASS@IP:PORT"</code>
+                </td>
+                <td class="description">
+                  Uses the entered SOCKS5 proxy for the session. Use
+                  <code>feature "use-socks5-proxy" "NULL:NULL@IP:PORT"</code> if
+                  no user:pass authentication is required.
+                </td>
+                <td>
+                  <ul class="arg-list">
+                    <li>
+                      <strong>Argument 1 (Proxy String):</strong>
+                      <code>string</code><br />(Format: "USER:PASS@IP:PORT". Use
+                      "NULL:NULL@IP:PORT" for no authentication.)
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <h2>CLI Arguments</h2>
 
         <!-- Mobile Layout for Arguments -->
@@ -1923,323 +2240,6 @@
                 <td>
                   <ul class="arg-list">
                     <li><strong>No arguments.</strong><br /></li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h2>Features</h2>
-
-        <!-- Mobile Layout for Features -->
-        <div class="mobile-layout">
-          <div class="command-item">
-            <div class="command-header">
-              <div class="command-name">add-extension</div>
-              <div class="command-syntax">
-                feature "add-extension" "path/to/extension"
-              </div>
-            </div>
-            <div class="command-description">
-              Downloads the extension, validates it's contents, then install it
-              as an add-on to the current Selenium extension.
-            </div>
-            <div class="command-args">
-              <div class="args-title">Arguments:</div>
-              <ul class="arg-list">
-                <li>
-                  <strong>Argument 1 (Extension path):</strong>
-                  <code>string</code><br />
-                  Supported formats:
-                  <code>
-                    <h5>
-                      "https://chromewebstore.google.com/detail/extension-name/manifest-id"
-                    </h5>
-                    <br />
-                    <h5>
-                      "https://addons.mozilla.org/en-US/firefox/addon/extension-name"
-                    </h5>
-                    <br />
-                    <h5>
-                      "https://addons.mozilla.org/firefox/downloads/file/extension-id/extension-name.xpi"
-                    </h5>
-                    <br />
-                    <h5>"file://path/to/firefox/extension.xpi"</h5>
-                    <br />
-                    <h5>"file://path/to/chrome/extension.crx"</h5>
-                  </code>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="command-item">
-            <div class="command-header">
-              <div class="command-name">disable-pycache</div>
-              <div class="command-syntax">feature "disable-pycache"</div>
-            </div>
-            <div class="command-description">
-              Instructs the compiler to disable the writing of the
-              <code>__pycache__</code> directory. This directory is written by
-              Visual Studio Code and contains <code>.pyc</code> files.
-            </div>
-            <div class="command-args">
-              <div class="args-title">Arguments:</div>
-              No arguments for the feature declaration itself.
-            </div>
-          </div>
-
-          <div class="command-item">
-            <div class="command-header">
-              <div class="command-name">disable-ssl</div>
-              <div class="command-syntax">feature "disable-ssl"</div>
-            </div>
-            <div class="command-description">
-              Disables SSL certificate authentication for the given session.
-            </div>
-            <div class="command-args">
-              <div class="args-title">Arguments:</div>
-              No arguments for the feature declaration itself.
-            </div>
-          </div>
-
-          <div class="command-item">
-            <div class="command-header">
-              <div class="command-name">use-http-proxy</div>
-              <div class="command-syntax">
-                feature "use-http-proxy" "USER:PASS@IP:PORT"
-              </div>
-            </div>
-            <div class="command-description">
-              Uses the entered HTTP proxy for the session. Use
-              "NULL:NULL@IP:PORT" if no user:pass authentication is required.
-            </div>
-            <div class="command-args">
-              <div class="args-title">Arguments:</div>
-              <ul class="arg-list">
-                <li>
-                  <strong>Argument 1 (Proxy String):</strong> <code>string</code
-                  ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT"
-                  for no authentication.)
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="command-item">
-            <div class="command-header">
-              <div class="command-name">use-https-proxy</div>
-              <div class="command-syntax">
-                feature "use-https-proxy" "USER:PASS@IP:PORT"
-              </div>
-            </div>
-            <div class="command-description">
-              Uses the entered HTTPS proxy for the session. Use
-              "NULL:NULL@IP:PORT" if no user:pass authentication is required.
-            </div>
-            <div class="command-args">
-              <div class="args-title">Arguments:</div>
-              <ul class="arg-list">
-                <li>
-                  <strong>Argument 1 (Proxy String):</strong> <code>string</code
-                  ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT"
-                  for no authentication.)
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="command-item">
-            <div class="command-header">
-              <div class="command-name">use-socks4-proxy</div>
-              <div class="command-syntax">
-                feature "use-socks4-proxy" "USER:PASS@IP:PORT"
-              </div>
-            </div>
-            <div class="command-description">
-              Uses the entered SOCKS4 proxy for the session. Use
-              <code>feature "use-socks4-proxy" "NULL:NULL@IP:PORT"</code> if no
-              user:pass authentication is required.
-            </div>
-            <div class="command-args">
-              <div class="args-title">Arguments:</div>
-              <ul class="arg-list">
-                <li>
-                  <strong>Argument 1 (Proxy String):</strong> <code>string</code
-                  ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT"
-                  for no authentication.)
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="command-item">
-            <div class="command-header">
-              <div class="command-name">use-socks5-proxy</div>
-              <div class="command-syntax">
-                feature "use-socks5-proxy" "USER:PASS@IP:PORT"
-              </div>
-            </div>
-            <div class="command-description">
-              Uses the entered SOCKS5 proxy for the session. Use
-              <code>feature "use-socks5-proxy" "NULL:NULL@IP:PORT"</code> if no
-              user:pass authentication is required.
-            </div>
-            <div class="command-args">
-              <div class="args-title">Arguments:</div>
-              <ul class="arg-list">
-                <li>
-                  <strong>Argument 1 (Proxy String):</strong> <code>string</code
-                  ><br />(Format: "USER:PASS@IP:PORT". Use "NULL:NULL@IP:PORT"
-                  for no authentication.)
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Desktop Layout for Features -->
-        <div class="desktop-layout">
-          <table>
-            <thead>
-              <tr>
-                <th>Command</th>
-                <th>Syntax Example</th>
-                <th>Description</th>
-                <th>Argument Types</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td><code>add-extension</code></td>
-                <td>
-                  <code>feature "add-extension" "path/to/extension"</code>
-                </td>
-                <td class="description">
-                  Downloads the extension, validates it's contents, then install
-                  it as an add-on to the current Selenium extension.
-                </td>
-                <td>
-                  <ul class="arg-list">
-                    <li>
-                      <strong>Argument 1 (Extension path):</strong>
-                      <code>string</code>
-                      <br />Supported formats:
-                      <h5>
-                        "https://chromewebstore.google.com/detail/extension-name/manifest-id"
-                      </h5>
-                      <h5>
-                        "https://addons.mozilla.org/en-US/firefox/addon/extension-name"
-                      </h5>
-                      <h5>
-                        "https://addons.mozilla.org/firefox/downloads/file/extension-id/extension-name.xpi"
-                      </h5>
-                      <h5>"file://path/to/firefox/extension.xpi"</h5>
-                      <h5>"file://path/to/chrome/extension.crx"</h5>
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-
-              <tr>
-                <td><code>disable-pycache</code></td>
-                <td><code>feature "disable-pycache"</code></td>
-                <td class="description">
-                  Instructs the compiler to disable the writing of the
-                  <code>__pycache__</code> directory. This directory is written
-                  by Visual Studio Code and contains <code>.pyc</code> files.
-                </td>
-                <td>No arguments for the feature declaration itself.</td>
-              </tr>
-              <tr>
-                <td><code>disable-ssl</code></td>
-                <td><code>feature "disable-ssl"</code></td>
-                <td class="description">
-                  Disables SSL certificate authentication for the given session.
-                </td>
-                <td>No arguments for the feature declaration itself.</td>
-              </tr>
-
-              <tr>
-                <td><code>use-http-proxy</code></td>
-                <td>
-                  <code>feature "use-http-proxy" "USER:PASS@IP:PORT"</code>
-                </td>
-                <td class="description">
-                  Uses the entered HTTP proxy for the session. Use
-                  "NULL:NULL@IP:PORT" if no user:pass authentication is
-                  required.
-                </td>
-                <td>
-                  <ul class="arg-list">
-                    <li>
-                      <strong>Argument 1 (Proxy String):</strong>
-                      <code>string</code><br />(Format: "USER:PASS@IP:PORT". Use
-                      "NULL:NULL@IP:PORT" for no authentication.)
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-
-              <tr>
-                <td><code>use-https-proxy</code></td>
-                <td>
-                  <code>feature "use-https-proxy" "USER:PASS@IP:PORT"</code>
-                </td>
-                <td class="description">
-                  Uses the entered HTTPS proxy for the session. Use
-                  "NULL:NULL@IP:PORT" if no user:pass authentication is
-                  required.
-                </td>
-                <td>
-                  <ul class="arg-list">
-                    <li>
-                      <strong>Argument 1 (Proxy String):</strong>
-                      <code>string</code><br />(Format: "USER:PASS@IP:PORT". Use
-                      "NULL:NULL@IP:PORT" for no authentication.)
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td><code>use-socks4-proxy</code></td>
-                <td>
-                  <code>feature "use-socks4-proxy" "USER:PASS@IP:PORT"</code>
-                </td>
-                <td class="description">
-                  Uses the entered SOCKS4 proxy for the session. Use
-                  <code>feature "use-socks4-proxy" "NULL:NULL@IP:PORT"</code> if
-                  no user:pass authentication is required.
-                </td>
-                <td>
-                  <ul class="arg-list">
-                    <li>
-                      <strong>Argument 1 (Proxy String):</strong>
-                      <code>string</code><br />(Format: "USER:PASS@IP:PORT". Use
-                      "NULL:NULL@IP:PORT" for no authentication.)
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td><code>use-socks5-proxy</code></td>
-                <td>
-                  <code>feature "use-socks5-proxy" "USER:PASS@IP:PORT"</code>
-                </td>
-                <td class="description">
-                  Uses the entered SOCKS5 proxy for the session. Use
-                  <code>feature "use-socks5-proxy" "NULL:NULL@IP:PORT"</code> if
-                  no user:pass authentication is required.
-                </td>
-                <td>
-                  <ul class="arg-list">
-                    <li>
-                      <strong>Argument 1 (Proxy String):</strong>
-                      <code>string</code><br />(Format: "USER:PASS@IP:PORT". Use
-                      "NULL:NULL@IP:PORT" for no authentication.)
-                    </li>
                   </ul>
                 </td>
               </tr>
