@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAMM Documentation</title>
+    <meta
+      name="description"
+      content="BAMM Browser Automation Macro Maker - Versioned command documentation"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="top-app-bar">
+      <div class="top-bar-container">
+        <div class="top-bar-left">
+          <h1 class="app-title">BAMM Documentation</h1>
+        </div>
+        <div class="top-bar-right">
+          <select
+            id="version-select"
+            class="version-select"
+            aria-label="Select BAMM version"
+          ></select>
+          <button
+            id="theme-toggle"
+            class="icon-button"
+            aria-label="Toggle theme"
+          >
+            🌓
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="layout">
+      <nav class="sidebar" aria-label="Sections">
+        <ul class="nav-list">
+          <li><a href="#actions" class="nav-link">Actions</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#cli" class="nav-link">CLI Arguments</a></li>
+          <li><a href="#selectors" class="nav-link">Selectors</a></li>
+        </ul>
+      </nav>
+      <main class="main" id="main-content" tabindex="-1"></main>
+    </div>
+    <footer class="footer">
+      <div class="footer-content">
+        <span>Copyright © 2026 Static Codes</span>
+        <a
+          href="https://github.com/Static-Codes/BAMM-Docs"
+          target="_blank"
+          rel="noopener"
+          >Edit on GitHub</a
+        >
+      </div>
+    </footer>
+
+    <div id="flyout-backdrop" class="flyout-backdrop"></div>
+    <div
+      id="flyout"
+      class="flyout"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="flyout-title"
+    >
+      <div class="flyout-header">
+        <h2 id="flyout-title">Command</h2>
+        <button id="flyout-close" class="icon-button" aria-label="Close">
+          ✕
+        </button>
+      </div>
+      <div class="flyout-body" id="flyout-body"></div>
+    </div>
+
+    <script type="module" src="assets/app.js"></script>
+  </body>
+</html>
