@@ -3,6 +3,56 @@
   "commands": [
     {
       "section": "Action",
+      "name": "add-cookie",
+      "description": "Adds a single cookie to the current Selenium instance.",
+      "added": "v1.0.0A4",
+      "removed": null,
+      "notes": "Documented in A4 desktop table only; not in mobile or decompiled code",
+      "syntax": "add-cookie \"cookie-name\", \"cookie-value\"",
+      "arguments": [],
+      "category": "action",
+      "examples": ["add-cookie \"session\", \"abc123\""]
+    },
+    {
+      "section": "Action",
+      "name": "add-header",
+      "description": "Adds an HTTP Header for the current request.",
+      "added": "v1.0.0A2",
+      "removed": null,
+      "notes": "",
+      "syntax": "add-header \"header-name\" \"header-value\"",
+      "arguments": [],
+      "category": "action",
+      "examples": ["add-header \"DNT\" \"1\""]
+    },
+    {
+      "section": "Action",
+      "name": "add-headers",
+      "description": "Adds multiple HTTP Headers for the current request via a JSON Object.",
+      "added": "v1.0.0A2",
+      "removed": null,
+      "notes": "",
+      "syntax": "add-headers {\"header-name\": \"value\"}",
+      "arguments": [],
+      "category": "action",
+      "examples": ["add-headers {\"User-Agent\": \"Custom\"}"]
+    },
+    {
+      "section": "Action",
+      "name": "browser",
+      "description": "Specifies the browser type. This MUST be the first valid line of the file. If not supplied, defaults to a Firefox instance and user agent.",
+      "added": "v1.0.0A1",
+      "removed": null,
+      "notes": "",
+      "syntax": "browser \"<browserName>\"",
+      "arguments": [
+        "\"<browserName>\" \n\nSupports: \n\"brave\"\n\"chrome\"\n\"chromium\"\n\"edge\"\n\"firefox\"\n\"opera\"\n\"safari\""
+      ],
+      "category": "action",
+      "examples": []
+    },
+    {
+      "section": "Action",
       "name": "click",
       "description": "Clicks the specified button element. Supports ID, NAME, TAG NAME, and XPATH selectors.",
       "added": "v1.0.0A1",
@@ -15,6 +65,18 @@
     },
     {
       "section": "Action",
+      "name": "click-at-position",
+      "description": "Clicks at a specific point on screen.",
+      "added": "v1.0.0A4",
+      "removed": null,
+      "notes": "",
+      "syntax": "click-at-position",
+      "arguments": ["x", "y"],
+      "category": "action",
+      "examples": []
+    },
+    {
+      "section": "Action",
       "name": "click-exp",
       "description": "Alternative to click; use this if click is causing issues. Supports CSS SELECTOR.",
       "added": "v1.0.0A1",
@@ -24,6 +86,18 @@
       "arguments": [],
       "category": "action",
       "examples": ["click-exp '#submit-button'"]
+    },
+    {
+      "section": "Action",
+      "name": "close-current-tab",
+      "description": "Closes the current tab and will close the browser if there's only one open tab.",
+      "added": "v1.0.0A4",
+      "removed": null,
+      "notes": "",
+      "syntax": "close-current-tab",
+      "arguments": [],
+      "category": "action",
+      "examples": []
     },
     {
       "section": "Action",
@@ -51,6 +125,18 @@
     },
     {
       "section": "Action",
+      "name": "fill-text-exp",
+      "description": "More advanced version of fill-text.",
+      "added": "v1.0.0A2",
+      "removed": null,
+      "notes": "",
+      "syntax": "fill-text-exp",
+      "arguments": ["selector", "value"],
+      "category": "action",
+      "examples": ["fill-text-exp \"#username\" \"admin\""]
+    },
+    {
+      "section": "Action",
       "name": "get-text",
       "description": "Gets the text for a specified element. Supports ID, NAME, TAG NAME, and XPATH selectors.",
       "added": "v1.0.0A1",
@@ -60,6 +146,18 @@
       "arguments": [],
       "category": "action",
       "examples": ["get-text \"#result\""]
+    },
+    {
+      "section": "Action",
+      "name": "open-new-tab",
+      "description": "A new browser tab is opened, the system will then pause for the number of seconds specified, then visits the requested url.",
+      "added": "v1.0.0A4",
+      "removed": null,
+      "notes": "",
+      "syntax": "open-new-tab",
+      "arguments": ["url", "tab-index"],
+      "category": "action",
+      "examples": ["open-new-tab \"https://google.com\" \"3\""]
     },
     {
       "section": "Action",
@@ -111,6 +209,18 @@
     },
     {
       "section": "Action",
+      "name": "set-custom-useragent",
+      "description": "Sets a custom user agent at the current point in the script, unlike bamm --set-custom-useragent, which sets this value at startup.",
+      "added": "v1.0.0A2",
+      "removed": null,
+      "notes": "",
+      "syntax": "set-custom-useragent",
+      "arguments": ["<user-agent-string>"],
+      "category": "action",
+      "examples": ["set-custom-useragent \"Mozilla/5.0...\""]
+    },
+    {
+      "section": "Action",
       "name": "start-javascript",
       "description": "Instructs the parser to read all following lines as a .js code block, until end-javascript is found; Will throw an error if end-javascript is not found within the file.",
       "added": "v1.0.0A1",
@@ -158,88 +268,16 @@
       "examples": ["wait-for-seconds 5"]
     },
     {
-      "section": "Action",
-      "name": "add-header",
-      "description": "Adds an HTTP Header for the current request.",
-      "added": "v1.0.0A2",
+      "section": "Feature",
+      "name": "add-extension",
+      "description": "Instucts BAMM to download/install a specific extension for the current session.",
+      "added": "v1.0.0A7",
       "removed": null,
       "notes": "",
-      "syntax": "add-header \"header-name\" \"header-value\"",
-      "arguments": [],
-      "category": "action",
-      "examples": ["add-header \"DNT\" \"1\""]
-    },
-    {
-      "section": "Action",
-      "name": "add-headers",
-      "description": "Adds multiple HTTP Headers for the current request via a JSON Object.",
-      "added": "v1.0.0A2",
-      "removed": null,
-      "notes": "",
-      "syntax": "add-headers {\"header-name\": \"value\"}",
-      "arguments": [],
-      "category": "action",
-      "examples": ["add-headers {\"User-Agent\": \"Custom\"}"]
-    },
-    {
-      "section": "Action",
-      "name": "fill-text-exp",
-      "description": "More advanced version of fill-text.",
-      "added": "v1.0.0A2",
-      "removed": null,
-      "notes": "",
-      "syntax": "fill-text-exp",
-      "arguments": ["selector", "value"],
-      "category": "action",
-      "examples": ["fill-text-exp \"#username\" \"admin\""]
-    },
-    {
-      "section": "Action",
-      "name": "set-custom-useragent",
-      "description": "Sets a custom user agent at the current point in the script, unlike bamm --set-custom-useragent, which sets this value at startup.",
-      "added": "v1.0.0A2",
-      "removed": null,
-      "notes": "",
-      "syntax": "set-custom-useragent",
-      "arguments": ["<user-agent-string>"],
-      "category": "action",
-      "examples": ["set-custom-useragent \"Mozilla/5.0...\""]
-    },
-    {
-      "section": "Action",
-      "name": "click-at-position",
-      "description": "Clicks at a specific point on screen.",
-      "added": "v1.0.0A4",
-      "removed": null,
-      "notes": "",
-      "syntax": "click-at-position",
-      "arguments": ["x", "y"],
-      "category": "action",
-      "examples": []
-    },
-    {
-      "section": "Action",
-      "name": "close-current-tab",
-      "description": "Closes the current tab and will close the browser if there's only one open tab.",
-      "added": "v1.0.0A4",
-      "removed": null,
-      "notes": "",
-      "syntax": "close-current-tab",
-      "arguments": [],
-      "category": "action",
-      "examples": []
-    },
-    {
-      "section": "Action",
-      "name": "open-new-tab",
-      "description": "A new browser tab is opened, the system will then pause for the number of seconds specified, then visits the requested url.",
-      "added": "v1.0.0A4",
-      "removed": null,
-      "notes": "",
-      "syntax": "open-new-tab",
-      "arguments": ["url", "tab-index"],
-      "category": "action",
-      "examples": ["open-new-tab \"https://google.com\" \"3\""]
+      "syntax": "feature \"add-extension\"",
+      "arguments": ["url or path to extension"],
+      "category": "feature",
+      "examples": ["feature \"add-extension\" \"path/to/extension\""]
     },
     {
       "section": "Feature",
@@ -249,18 +287,6 @@
       "removed": "v1.0.0A4",
       "notes": "Removed in A4",
       "syntax": "feature \"async\"",
-      "arguments": [],
-      "category": "feature",
-      "examples": []
-    },
-    {
-      "section": "Feature",
-      "name": "browser",
-      "description": "Specifies the browser type. This MUST be the first valid line of the file. If not supplied, defaults to a Firefox instance and user agent.",
-      "added": "v1.0.0A1",
-      "removed": null,
-      "notes": "",
-      "syntax": "feature \"browser\"",
       "arguments": [],
       "category": "feature",
       "examples": []
@@ -291,24 +317,24 @@
     },
     {
       "section": "Feature",
-      "name": "no-ssl",
-      "description": "Instructs BAMM to compile the current skip without SSL certificate pinning. Note this is not recommended unless you know what you're doing.",
-      "added": "v1.0.0A1",
-      "removed": null,
-      "notes": "Renamed to disable-ssl in A4; both names accepted in A4\u2013A7",
-      "syntax": "feature \"no-ssl\"",
-      "arguments": [],
-      "category": "feature",
-      "examples": []
-    },
-    {
-      "section": "Feature",
       "name": "disable-ssl",
       "description": "Instructs BAMM to compile the current skip without SSL certificate pinning. Note this is not recommended unless you know what you're doing.",
       "added": "v1.0.0A4",
       "removed": null,
       "notes": "Renamed from no-ssl in A4; both names accepted in A4\u2013A7",
       "syntax": "feature \"disable-ssl\"",
+      "arguments": [],
+      "category": "feature",
+      "examples": []
+    },
+    {
+      "section": "Feature",
+      "name": "no-ssl",
+      "description": "Instructs BAMM to compile the current skip without SSL certificate pinning. Note this is not recommended unless you know what you're doing.",
+      "added": "v1.0.0A1",
+      "removed": null,
+      "notes": "Renamed to disable-ssl in A4; both names accepted in A4\u2013A7",
+      "syntax": "feature \"no-ssl\"",
       "arguments": [],
       "category": "feature",
       "examples": []
@@ -324,18 +350,6 @@
       "arguments": [],
       "category": "feature",
       "examples": ["feature \"run-headless\""]
-    },
-    {
-      "section": "Feature",
-      "name": "add-extension",
-      "description": "Instucts BAMM to download/install a specific extension for the current session.",
-      "added": "v1.0.0A7",
-      "removed": null,
-      "notes": "",
-      "syntax": "feature \"add-extension\"",
-      "arguments": ["url or path to extension"],
-      "category": "feature",
-      "examples": ["feature \"add-extension\" \"path/to/extension\""]
     },
     {
       "section": "Feature",
@@ -367,6 +381,18 @@
     },
     {
       "section": "Feature",
+      "name": "use-mobile-user-agent",
+      "description": "Instructs the compiler to return a mobile user agent. This only works when browser is set to \"safari\".",
+      "added": "v1.0.0A4",
+      "removed": null,
+      "notes": "Only in A4+ desktop table; instructs compiler to return mobile UA when browser is safari",
+      "syntax": "feature \"use-mobile-user-agent\"",
+      "arguments": [],
+      "category": "feature",
+      "examples": ["feature \"use-mobile-user-agent\""]
+    },
+    {
+      "section": "Feature",
       "name": "use-socks4-proxy",
       "description": "Uses the entered SOCKS4 proxy for the session. Use \"NULL:NULL@IP:PORT\" if no user:pass authentication is required.",
       "added": "v1.0.0A1",
@@ -394,188 +420,16 @@
       ]
     },
     {
-      "section": "Feature",
-      "name": "use-mobile-user-agent",
-      "description": "Instructs the compiler to return a mobile user agent. This only works when browser is set to \"safari\".",
-      "added": "v1.0.0A4",
-      "removed": null,
-      "notes": "Only in A4+ desktop table; instructs compiler to return mobile UA when browser is safari",
-      "syntax": "feature \"use-mobile-user-agent\"",
-      "arguments": [],
-      "category": "feature",
-      "examples": ["feature \"use-mobile-user-agent\""]
-    },
-    {
       "section": "CLI",
-      "name": "add",
-      "description": "Adds a .bamc file to the userScripts directory.",
-      "added": "v1.0.0A1",
+      "name": "--allow-multiple-instances",
+      "description": "Disables the single instance guard, allowing BAMM to run alongside another instance. Intended for automated/headless invocation.",
+      "added": "v1.0.0A8",
       "removed": null,
       "notes": "",
-      "syntax": "bamm add",
-      "arguments": ["<path/to/file.bamc>"],
-      "category": "cli",
-      "examples": ["bamm add <path/to/file.bamc>"]
-    },
-    {
-      "section": "CLI",
-      "name": "compile",
-      "description": "Compiles a .bamc file that isn't located in the userScripts directory",
-      "added": "v1.0.0A1",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm compile",
-      "arguments": ["<path/to/file.bamc>"],
-      "category": "cli",
-      "examples": ["bamm compile <path/to/file.bamc>"]
-    },
-    {
-      "section": "CLI",
-      "name": "delete",
-      "description": "Deletes the specified .bamc file.",
-      "added": "v1.0.0A1",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm delete",
-      "arguments": ["<path/to/file.bamc>"],
-      "category": "cli",
-      "examples": ["bamm delete <path/to/file.bamc>"]
-    },
-    {
-      "section": "CLI",
-      "name": "help",
-      "description": "Displays information about the specified command.",
-      "added": "v1.0.0A1",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm help",
+      "syntax": "bamm --allow-multiple-instances",
       "arguments": [],
       "category": "cli",
-      "examples": []
-    },
-    {
-      "section": "CLI",
-      "name": "run",
-      "description": "Runs the BAMC script provided.",
-      "added": "v1.0.0A3",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm run",
-      "arguments": ["<path/to/file.bamc>"],
-      "category": "cli",
-      "examples": ["bamm run <path/to/file.bamc>"]
-    },
-    {
-      "section": "CLI",
-      "name": "validate",
-      "description": "Validates the provided BAMC script.",
-      "added": "v1.0.0A4",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm validate",
-      "arguments": ["<path/to/file.bamc>"],
-      "category": "cli",
-      "examples": ["bamm validate \"<path/to/file.bamc>\""]
-    },
-    {
-      "section": "CLI",
-      "name": "clear",
-      "description": "Deletes the specified application directory, supports 'config', 'userScripts', and 'compiled' as arguments.",
-      "added": "v1.0.0A2",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm clear",
-      "arguments": ["<directory>"],
-      "category": "cli",
-      "examples": [
-        "bamm clear compiled",
-        "bamm clear config",
-        "bamm clear userScripts"
-      ]
-    },
-    {
-      "section": "CLI",
-      "name": "uninstall",
-      "description": "Uninstalls BAMM from the current system. ",
-      "added": "v1.0.0A2",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm uninstall",
-      "arguments": [],
-      "category": "cli",
-      "examples": ["bamm uninstall"]
-    },
-    {
-      "section": "CLI",
-      "name": "backup",
-      "description": "Backs up all application files to BAMM-Backup.zip.",
-      "added": "v1.0.0A5",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm backup",
-      "arguments": [],
-      "category": "cli",
-      "examples": ["bamm backup"]
-    },
-    {
-      "section": "CLI",
-      "name": "restore",
-      "description": "Looks for a backup of BAMM's data, if the data is found, a restoration is attempted.",
-      "added": "v1.0.0A5",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm restore",
-      "arguments": [],
-      "category": "cli",
-      "examples": ["bamm restore"]
-    },
-    {
-      "section": "CLI",
-      "name": "new",
-      "description": "Creates a new .BAMC file in the userScripts directory. Prompts the user to select a custom text editor to open the specified file. If a custom text editor is not found, the OS default is used.",
-      "added": "v1.0.0A5",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm new",
-      "arguments": [],
-      "category": "cli",
-      "examples": ["bamm new"]
-    },
-    {
-      "section": "CLI",
-      "name": "-n",
-      "description": "Alias to the new command. Creates a new .bamc file in the userScripts directory, then prompts the user to select a custom text editor to open it. If a custom text editor is not found, the OS default is used.",
-      "added": "v1.0.0A5",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm -n",
-      "arguments": [],
-      "category": "cli",
-      "examples": ["bamm -n"]
-    },
-    {
-      "section": "CLI",
-      "name": "open",
-      "description": "Opens a .BAMC file that exists in the userScripts directory. If this file does not exist, the file is automatically created. The user is then prompted to select a custom text editor to open the specified file. If a custom text editor is not found, the OS default is used.",
-      "added": "v1.0.0A6",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm open",
-      "arguments": [],
-      "category": "cli",
-      "examples": ["bamm open"]
-    },
-    {
-      "section": "CLI",
-      "name": "-o",
-      "description": "Alias to the open command. Opens a .bamc file that exists in the userScripts directory, creating it if it does not, then prompts the user to select a custom text editor to open it. If a custom text editor is not found, the OS default is used.",
-      "added": "v1.0.0A6",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm -o",
-      "arguments": [],
-      "category": "cli",
-      "examples": ["bamm -o"]
+      "examples": ["bamm --allow-multiple-instances"]
     },
     {
       "section": "CLI",
@@ -600,6 +454,18 @@
       "arguments": [],
       "category": "cli",
       "examples": []
+    },
+    {
+      "section": "CLI",
+      "name": "--exit-on-ext-fail",
+      "description": "Instructs BAMM to exit with a non-zero exit code when an extension fails to install, instead of warning and continuing. Useful for automated invocation, where a failed extension should fail the run.",
+      "added": "v1.0.0A7",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm --exit-on-ext-fail",
+      "arguments": [],
+      "category": "cli",
+      "examples": ["bamm --exit-on-ext-fail"]
     },
     {
       "section": "CLI",
@@ -663,18 +529,6 @@
     },
     {
       "section": "CLI",
-      "name": "--version",
-      "description": "Displays the current version of BAMM, and whether there's a new version available.",
-      "added": "v1.0.0A5",
-      "removed": null,
-      "notes": "",
-      "syntax": "bamm --version",
-      "arguments": [],
-      "category": "cli",
-      "examples": ["bamm --version"]
-    },
-    {
-      "section": "CLI",
       "name": "--set-custom-useragent",
       "description": "Sets the user agent that the browser uses on start up.",
       "added": "v1.0.0A2",
@@ -687,39 +541,187 @@
     },
     {
       "section": "CLI",
-      "name": "--exit-on-ext-fail",
-      "description": "Instructs BAMM to exit with a non-zero exit code when an extension fails to install, instead of warning and continuing. Useful for automated invocation, where a failed extension should fail the run.",
-      "added": "v1.0.0A7",
+      "name": "--version",
+      "description": "Displays the current version of BAMM, and whether there's a new version available.",
+      "added": "v1.0.0A5",
       "removed": null,
       "notes": "",
-      "syntax": "bamm --exit-on-ext-fail",
+      "syntax": "bamm --version",
       "arguments": [],
       "category": "cli",
-      "examples": ["bamm --exit-on-ext-fail"]
+      "examples": ["bamm --version"]
     },
     {
       "section": "CLI",
-      "name": "--allow-multiple-instances",
-      "description": "Disables the single instance guard, allowing BAMM to run alongside another instance. Intended for automated/headless invocation.",
-      "added": "v1.0.0A8",
+      "name": "-n",
+      "description": "Alias to the new command. Creates a new .bamc file in the userScripts directory, then prompts the user to select a custom text editor to open it. If a custom text editor is not found, the OS default is used.",
+      "added": "v1.0.0A5",
       "removed": null,
       "notes": "",
-      "syntax": "bamm --allow-multiple-instances",
+      "syntax": "bamm -n",
       "arguments": [],
       "category": "cli",
-      "examples": ["bamm --allow-multiple-instances"]
+      "examples": ["bamm -n"]
     },
     {
-      "section": "Action",
-      "name": "add-cookie",
-      "description": "Adds a single cookie to the current Selenium instance.",
+      "section": "CLI",
+      "name": "-o",
+      "description": "Alias to the open command. Opens a .bamc file that exists in the userScripts directory, creating it if it does not, then prompts the user to select a custom text editor to open it. If a custom text editor is not found, the OS default is used.",
+      "added": "v1.0.0A6",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm -o",
+      "arguments": [],
+      "category": "cli",
+      "examples": ["bamm -o"]
+    },
+    {
+      "section": "CLI",
+      "name": "add",
+      "description": "Adds a .bamc file to the userScripts directory.",
+      "added": "v1.0.0A1",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm add",
+      "arguments": ["<path/to/file.bamc>"],
+      "category": "cli",
+      "examples": ["bamm add <path/to/file.bamc>"]
+    },
+    {
+      "section": "CLI",
+      "name": "backup",
+      "description": "Backs up all application files to BAMM-Backup.zip.",
+      "added": "v1.0.0A5",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm backup",
+      "arguments": [],
+      "category": "cli",
+      "examples": ["bamm backup"]
+    },
+    {
+      "section": "CLI",
+      "name": "clear",
+      "description": "Deletes the specified application directory, supports 'config', 'userScripts', and 'compiled' as arguments.",
+      "added": "v1.0.0A2",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm clear",
+      "arguments": ["<directory>"],
+      "category": "cli",
+      "examples": [
+        "bamm clear compiled",
+        "bamm clear config",
+        "bamm clear userScripts"
+      ]
+    },
+    {
+      "section": "CLI",
+      "name": "compile",
+      "description": "Compiles a .bamc file that isn't located in the userScripts directory",
+      "added": "v1.0.0A1",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm compile",
+      "arguments": ["<path/to/file.bamc>"],
+      "category": "cli",
+      "examples": ["bamm compile <path/to/file.bamc>"]
+    },
+    {
+      "section": "CLI",
+      "name": "delete",
+      "description": "Deletes the specified .bamc file.",
+      "added": "v1.0.0A1",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm delete",
+      "arguments": ["<path/to/file.bamc>"],
+      "category": "cli",
+      "examples": ["bamm delete <path/to/file.bamc>"]
+    },
+    {
+      "section": "CLI",
+      "name": "help",
+      "description": "Displays information about the specified command.",
+      "added": "v1.0.0A1",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm help",
+      "arguments": [],
+      "category": "cli",
+      "examples": []
+    },
+    {
+      "section": "CLI",
+      "name": "new",
+      "description": "Creates a new .BAMC file in the userScripts directory. Prompts the user to select a custom text editor to open the specified file. If a custom text editor is not found, the OS default is used.",
+      "added": "v1.0.0A5",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm new",
+      "arguments": [],
+      "category": "cli",
+      "examples": ["bamm new"]
+    },
+    {
+      "section": "CLI",
+      "name": "open",
+      "description": "Opens a .BAMC file that exists in the userScripts directory. If this file does not exist, the file is automatically created. The user is then prompted to select a custom text editor to open the specified file. If a custom text editor is not found, the OS default is used.",
+      "added": "v1.0.0A6",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm open",
+      "arguments": [],
+      "category": "cli",
+      "examples": ["bamm open"]
+    },
+    {
+      "section": "CLI",
+      "name": "restore",
+      "description": "Looks for a backup of BAMM's data, if the data is found, a restoration is attempted.",
+      "added": "v1.0.0A5",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm restore",
+      "arguments": [],
+      "category": "cli",
+      "examples": ["bamm restore"]
+    },
+    {
+      "section": "CLI",
+      "name": "run",
+      "description": "Runs the BAMC script provided.",
+      "added": "v1.0.0A3",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm run",
+      "arguments": ["<path/to/file.bamc>"],
+      "category": "cli",
+      "examples": ["bamm run <path/to/file.bamc>"]
+    },
+    {
+      "section": "CLI",
+      "name": "uninstall",
+      "description": "Uninstalls BAMM from the current system. ",
+      "added": "v1.0.0A2",
+      "removed": null,
+      "notes": "",
+      "syntax": "bamm uninstall",
+      "arguments": [],
+      "category": "cli",
+      "examples": ["bamm uninstall"]
+    },
+    {
+      "section": "CLI",
+      "name": "validate",
+      "description": "Validates the provided BAMC script.",
       "added": "v1.0.0A4",
       "removed": null,
-      "notes": "Documented in A4 desktop table only; not in mobile or decompiled code",
-      "syntax": "add-cookie \"cookie-name\", \"cookie-value\"",
-      "arguments": [],
-      "category": "action",
-      "examples": ["add-cookie \"session\", \"abc123\""]
+      "notes": "",
+      "syntax": "bamm validate",
+      "arguments": ["<path/to/file.bamc>"],
+      "category": "cli",
+      "examples": ["bamm validate \"<path/to/file.bamc>\""]
     }
   ],
   "versions": [
