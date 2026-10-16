@@ -155,9 +155,9 @@
       "removed": null,
       "notes": "",
       "syntax": "open-new-tab",
-      "arguments": ["url", "tab-index"],
+      "arguments": ["url", "delay"],
       "category": "action",
-      "examples": ["open-new-tab \"https://google.com\" \"3\""]
+      "examples": ["open-new-tab \"https://google.com\" 3"]
     },
     {
       "section": "Action",
